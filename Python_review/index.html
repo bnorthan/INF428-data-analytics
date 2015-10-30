@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Week 1: Python review</title>
+
+		<meta name="description" content "Week 1 of INF 428: ">
+		<meta name="author" content="Brian Northan">i
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="../reveal.js-3.1.0/css/reveal.css">
+		<link rel="stylesheet" href="../reveal.js-3.1.0/css/theme/beige.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="../reveal.js-3.1.0/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js-3.1.0/css/print/pdf.css' : '../reveal.js-3.1.0/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<script type="text/javascript"
+            		src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    		</script>
+
+		<!--[if lt IE 9]>
+		<script src="../reveal.js-3.1.0/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-background="../images/background2.png">
+					<h2>INF 428: Python Review</h2>
+					<p>
+					<small>
+						<a href="https://github.com/bnorthan">Brian Northan</a>,
+						<a href="http://www.truenorth-ia.com/">True North Intelligent Algorithms LLC</a>
+					</small>
+					</p>
+				</section>
+			
+				<section data-background="../images/background2.png">
+					<h2>Ways to run Python</h2>
+					<section>
+						<ul>
+							<li><a href="https://en.wikipedia.org/wiki/IPython">Ipython </a></li>
+							<li><a href="http://ipython.org/notebook.html">Ipython Notebook</a></li>
+						</ul>
+					</section>
+				</section>
+			
+				<section data-background="../images/background2.png">
+					<h2>Python Basics</h2>
+					<section>
+					<p>Comments and Printing</p>
+  					<pre><code class="python" data-trim contenteditable>
+					
+# This is a comment (typically single line)
+"""
+Triple quotes are used for large multi-line comments, and
+typically to document functions and modules (Docstrings)
+"""
+
+# here is how we print
+print "Hello!"
+print
+
+					
+						</code></pre>
+					</section>			
+						
+					<section>
+					<p>Math Basics</p>
+					<pre><code class="python" data-trim contenteditable>
+a = 1+1		# Sum
+b = 2*4		# Multiplication
+c = 2**4	# Exponentiation (2^14 = 16)
+print "Print variables a, b, c", a, b, c
+print
+
+
+						</code></pre>
+
+  					<pre><code class="python" data-trim contenteditable>
+# Division is slightly special:
+print "Integer division: 3/4=", 3/4
+print "Float division: 3/4=", 3.0/4.0
+print
+
+						</code></pre>
+	  				<pre><code class="python" data-trim contenteditable>
+# BTW, you cal also multiply strings. Try this:
+print "Multiply hello by 3: ", 3*"Hello!"	
+						</code></pre>
+					</section>	
+					
+					<section>
+
+					<p>Operators</p>
+  					<pre><code class="python" data-trim contenteditable>
+
+# Operators:
+print "(a is b):", (a is b)
+prinhttps://twitter.com://twitter.com/t "a==2:", a==2
+print "a is not b and b!=2:", a is not b and b!=2
+print
+					
+						</code></pre>
+				</section>	
+
+				<section>
+
+					<p>Lists</p>
+  					<pre><code class="python" data-trim contenteditable>
+
+# Working with lists: Lists are indexed sequences of items. The
+# 1st index (item position) is zero, the 2nd index is one, etc.
+my_list =[]				# An empty list
+my_list = [1,2,3,4,5,6]	# A prefilled list
+my_list[0] = "string"	# Assign new value to an initialized index
+my_list.append(7)		# Append new item to list
+print "Here is the list:", my_list
+my_list.pop()			# Remove last element from list
+print "And here it is after calling list.pop():", my_list
+print
+
+				
+						</code></pre>
+				</section>	
+	
+				<section>
+
+					<p>Dictionary</p>
+  					<pre><code class="python" data-trim contenteditable>
+
+# Working with dictionaries: Dictionaries store mappings between
+# <keys> and <values>. Keys can be unique strings or numbers (or
+# any immutable type). Values can be anything: a string, a number,
+# an expression, or any other object.
+my_dict = {}								# An empty dictionary
+my_dict = {"John":1234, "my_list":my_list}	# A prefilled dictionary
+my_dict['Best Team']="Blue Jays"		# Add a key:value pair
+
+# Create a list from a generator expression (the <value>) and
+# associate it to a variable (the <key>)
+a = "Bit-depths"
+my_dict[a] = [2**x for x in (1, 8, 16, 32)]
+
+# Looking up values:
+print "my_dict[\"Best Team\"]", my_dict["Best Team"]
+print "my_dict[\"my_list\"]", my_dict["my_list"]
+print "my_dict[a]", my_dict[a]
+
+				
+						</code></pre>
+
+				</section>	
+
+				<section>
+						<p>Try a key that doesn't exist</p>
+  				<pre><code class="python" data-trim contenteditable>
+
+try:
+    my_var = my_dict["Expos"]
+except KeyError:
+    print "Expos is not in the dictionary"
+		print "They moved to Washington in 2005 :("
+print
+
+
+					</code></pre>
+
+			</section>
+			</section>
+		
+			<section data-background="../images/background2.png">
+					<h2>Control Flow</h2>
+					<section>
+					<p>If statement (Indentation is critical!)</p>
+  					<pre><code class="python" data-trim contenteditable>
+
+a,b = 10,20
+my_list = [1, 2, 3, 4]
+
+# An if statement: Indentation is critical in python!
+if a in my_list:
+	print a, "is in the list"
+elif b in my_list:
+	print b, "is in the list"
+else:
+    print "Neither", a, "or", b, "are in in the list"
+
+					
+						</code></pre>
+					</section>				
+	
+					<section>
+					<p>Modify to detect if both are in the list</p>
+					<pre><code class="python" data-trim contenteditable>
+
+a,b=1,3
+
+list = [1, 2, 3, 4]
+					
+# An if statement: Indentation is critical in python!
+if a in my_list and b not in my_list:
+	print a, "is in the list"
+elif b in my_list and a not in my_list:
+	print b, "is in the list"
+elif a in my_list and b in my_list:
+	print "a ",a," and b ",b," are both in the list"
+else:
+	print "Neither", a, "or", b, "are in in the list"
+
+						</code></pre>
+			</section>				
+		</section>	
+			
+				
+		</div>
+
+		</div>
+
+		<script src="../reveal.js-3.1.0/lib/js/head.min.js"></script>
+		<script src="../reveal.js-3.1.0/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'none', // none/fade/slide/convex/concave/zoom
+				
+				math: {
+        				mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
+        				config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+   					 },
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: '../reveal.js-3.1.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../reveal.js-3.1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../reveal.js-3.1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../reveal.js-3.1.0/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../reveal.js-3.1.0/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../reveal.js-3.1.0/plugin/notes/notes.js', async: true },
+					{src: '../reveal.js-3.1.0/plugin/math/math.js', async: true },		
+					]
+			});
+
+		</script>
+
+	</body>
+</html>
