@@ -251,7 +251,7 @@ print
 					</code></pre>
 			</section>				
 	
-			<section>
+				<section>
 					<p>Range function (useful for loops)</p>
 					<pre><code class="python" data-trim contenteditable>
 
@@ -268,8 +268,85 @@ for i in [1,2,3,4,5]:
 
 					</code></pre>
 			</section>				
+			<section>
+					<p>We can also loop through lists</p>
+					<pre><code class="python" data-trim contenteditable>
+print "Loop through a list"
+
+team_list=["Blue Jays", "Yankees", "Red Sox", "Rays", "Orioles"]
+
+for team in team_list:
+    print "The team is: ", team
+
+			</code></pre>
+			</section>				
 		</section>	
+	
+
+		<section data-background="../images/background2.png">
+			<h3>Functions and Modules</h3>
+						<section>
+						<p>Import statement is used to access additional modules</p>
+
+						<pre><code class="python" data-trim contenteditable>
+# Importing a Python module:
+import math
+print "[Line 09]", "Python PI=", math.pi # https://docs.python.org/2/library/math.html
+
+
+# The import statement can occur anywhere in a script
+my_teams = ["Blue Jays", "Oilers", "Raptors", "Bills"]
+import random
+print "A random team:", random.choice(my_teams) # https://docs.python.org/2/library/random.html
+
+			</code></pre>
+			</section>				
+	
+				<section>
+						
+					<ul>
+						<li>Functions are defined using 'def'</li>
+						<li>Indentation is important</li>
+					</ul>
+
+						<pre><code class="python" data-trim contenteditable>
 			
+# Functions are defined with <def>. Return values are
+# specified by a <return> statement. Here is a function
+# without arguments:
+def today():
+    """This function returns a string of today's date"""
+    import datetime		# https://docs.python.org/2/library/datetime.html
+    td = datetime.date.today()
+    return td
+
+print "today() returned", today()
+print  "str(today()) returned", str(today())	
+						
+						</code></pre>
+			</section>				
+	
+		<section>					
+			<p>A function with arguments</p>	
+						<pre><code class="python" data-trim contenteditable>
+				
+
+# A Function with arguments:
+def minFunction(a, b):
+    """This function returns the smallest of two arguments"""
+    if a < b:
+        return a
+    else:
+        return b
+
+print minFunction(10,20), "is smaller"
+
+
+						</code></pre>
+			</section>				
+	
+		</section>	
+
 				
 		</div>
 
