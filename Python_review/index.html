@@ -326,7 +326,7 @@ print  "str(today()) returned", str(today())
 						</code></pre>
 			</section>				
 	
-		<section>					
+			<section>					
 			<p>A function with arguments</p>	
 						<pre><code class="python" data-trim contenteditable>
 				
@@ -341,6 +341,71 @@ def minFunction(a, b):
 
 print minFunction(10,20), "is smaller"
 
+
+						</code></pre>
+			</section>				
+		</section>
+	
+			<section data-background="../images/background2.png">
+			<h3>List vs. Numpy Array</h3>
+		
+			<section>
+					<ul>
+						<li>Numpy is a python module used for math</li>
+						<li>List is a generic container</li>
+						<li>Array is a numpy structure optimized for numeric calculations</li>
+					</ul>
+
+		
+						<pre><code class="python" data-trim contenteditable>
+		
+n=10
+a_list = range(n)
+a_array = np.arange(n)
+
+						</code></pre>
+			</section>				
+
+				<section>
+					<p>Oops!  Forgot to import numpy</p>		
+						<pre><code class="python" data-trim contenteditable>
+		
+import numpy as np
+n=10
+a_list = range(n)
+a_array = np.arange(n)
+
+						</code></pre>
+			</section>				
+	
+			<section>
+						<p>Let's try multiplying the list and the array</p>
+						<pre><code class="python" data-trim contenteditable>
+
+mul_list=a_list*3
+print mul_list
+mul_array=a_array*3			
+print mul_array
+						</code></pre>
+				<p>Addition??</p>
+						<pre><code class="python" data-trim contenteditable>
+
+mul_list=a_list+3
+print mul_list
+mul_array=a_array+3
+print mul_array			
+
+						</code></pre>
+					</section>
+					<section>
+						
+						<p>Raise to a power.</p>
+						<pre><code class="python" data-trim contenteditable>
+
+mul_list=a_list**3
+print mul_list
+mul_array=a_array**3	
+print mul_array		
 
 						</code></pre>
 			</section>				
