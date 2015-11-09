@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Week 2: Numpy</title>
+
+		<meta name="description" content "Week 2 of INF 428: ">
+		<meta name="author" content="Brian Northan">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="../reveal.js-3.1.0/css/reveal.css">
+		<link rel="stylesheet" href="../reveal.js-3.1.0/css/theme/beige.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="../reveal.js-3.1.0/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js-3.1.0/css/print/pdf.css' : '../reveal.js-3.1.0/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<script type="text/javascript"
+            		src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    		</script>
+
+		<!--[if lt IE 9]>
+		<script src="../reveal.js-3.1.0/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+		
+				<section data-background="../images/background2.png">
+					<h2>INF 428: Introduction to Numpy</h2>
+					<p>
+						<small>
+							<a href="https://github.com/bnorthan">Brian Northan</a>,
+							<a href="http://www.truenorth-ia.com/">True North Intelligent Algorithms LLC</a>
+						</small>
+					</p>
+		
+				</section>
+			
+				<section data-background="../images/background2.png">
+					<h2>Reference Material</h2>
+					<ul>
+						<li>Chapter 2: Python Data Analysis</h3>
+						<li><a href="http://www.numpy.org/">Numpy</a></li>
+					</ul>
+				</section>
+				
+				
+				<section data-background="../images/background2.png">
+					<h2>Import Numpy</h2>
+
+					<section>
+					<p>Example</p>
+  					<pre><code class="python" data-trim contenteditable>
+					
+# convention is ussually
+import numpy as np
+
+# then we can access numpy function
+test=np.arange(n)
+
+					
+						</code></pre>
+					</section>
+			</section>			
+						
+			<section data-background="../images/background2.png">
+			<h3>List vs. Numpy Array</h3>
+		
+			<section>
+					<ul>
+						<li>Numpy is a python module used for math</li>
+						<li>List is a generic container</li>
+						<li>Array is a numpy structure optimized for numeric calculations</li>
+					</ul>
+
+		
+						<pre><code class="python" data-trim contenteditable>
+		
+n=10
+a_list = range(n)
+a_array = np.arange(n)
+
+						</code></pre>
+			</section>				
+
+				<section>
+					<p>Oops!  Forgot to import numpy</p>		
+						<pre><code class="python" data-trim contenteditable>
+		
+import numpy as np
+n=10
+a_list = range(n)
+a_array = np.arange(n)
+
+						</code></pre>
+			</section>				
+	
+			<section>
+						<p>Let's try multiplying the list and the array</p>
+						<pre><code class="python" data-trim contenteditable>
+
+mul_list=a_list*3
+print mul_list
+mul_array=a_array*3			
+print mul_array
+						</code></pre>
+				<p>Add a constant...</p>
+						<pre><code class="python" data-trim contenteditable>
+
+mul_list=a_list+3
+print mul_list
+mul_array=a_array+3
+print mul_array			
+
+						</code></pre>
+					</section>
+					<section>
+							
+						<p>Adding lists vs. adding vectors</p>
+						<pre><code class="python" data-trim contenteditable>
+list1=[1,2,3]
+list2=[4,5,6]
+array1=np.arange(1,4)
+array2=np.arange(4,7)
+
+list3=list1+list2
+array3=array1+array2
+
+print list3
+print array3
+						</code></pre>
+				</section>
+
+				<section>
+						<p>Raise to a power.</p>
+						<pre><code class="python" data-trim contenteditable>
+
+mul_list=a_list**3
+print mul_list
+mul_array=a_array**3	
+print mul_array		
+
+						</code></pre>
+			</section>				
+	
+		</section>	
+	
+		<section data-background="../images/background2.png">
+					<h2>Working with arrays</h2>
+
+					<section>
+						<p>Initialize an array</p>
+  					<pre><code class="python" data-trim contenteditable>
+					
+import numpy as np
+
+array_1d=np.array([233, 12, 100])
+print array_1d
+
+# the shape function show the size of the array
+print array_1d.shape
+					
+						</code></pre>
+		
+						<p>Access elements</p>
+						<pre><code class="python" data-trim contenteditable>
+
+test1=array_1d[0]					
+test2=array_1d[1]					
+test3=array_1d[2]					
+				
+print "the numbers are",test1,test2,test3	
+						</code></pre>
+					</section>
+					<section>
+						<p>A 2D Array</p>
+   					<pre><code class="python" data-trim contenteditable>
+					
+array_2d=np.array([[20, 40],[10,20]])
+print array_2d
+print array_2d.shape
+					
+						</code></pre>
+						<p>Access elements</p>
+						<pre><code class="python" data-trim contenteditable>
+					
+test1=array_2d[0,0]
+test2=array_2d[0,1]
+test3=array_2d[1,0]
+test4=array_2d[1,1]
+				
+print "the numbers are",test1,test2,test3,test4	
+						</code></pre>
+					</section>
+
+						<section>
+						<p>Numpy Arrays can have different types</p>
+						
+   					<pre><code class="python" data-trim contenteditable>
+int_array=np.array([0,1,2,3], dtype=np.uint16)
+float32_array=np.array([0,1,2,3], dtype=np.float32)
+
+print int_array
+print float32_array	
+
+
+						</code></pre>
+
+						</section>
+							<section>
+						<p>Slicing Arrays</p>
+						
+   					<pre><code class="python" data-trim contenteditable>
+a=np.arange(15)
+print a
+
+b=a[4:11]
+print "sliced 4:11",b
+
+c=a[2:12:3]
+print "sliced 2:12:3:",c
+
+d=a[-1]
+print "indexed -1:",d
+
+e=a[8:2:-2]
+print "sliced 8:2:-2"
+
+						</code></pre>
+					</section>			
+						<section>
+						<p>Reshaping Arrays</p>
+						
+   					<pre><code class="python" data-trim contenteditable>
+a=np.arange(15)
+
+print "before reshaping: "
+print a
+print a.shape
+
+a.shape=(5,3)
+
+print "after reshaping: "
+print a
+print a.shape
+
+
+						</code></pre>
+					</section>			
+					</section>
+
+
+
+					<section data-background="../images/background2.png">
+					<h2>Array Atributes</h2>
+
+					<section>
+						<p>Create an array to work with...</p>
+  					<pre><code class="python" data-trim contenteditable>
+			
+test_array=np.arange(20).reshape(4,5)
+print test_array
+
+print test_array.ndim
+print test_array.shape
+print test_array.size
+print test_array.nbytes
+print test_array.itemsize
+
+print test_array.T
+
+						</code></pre>
+					</section>
+				</section>
+
+					<section data-background="../images/background2.png">
+					<h2>Conditional Indexing</h2>
+
+					<section>
+						<p>We can index an array by a condition</p>
+  					<pre><code class="python" data-trim contenteditable>
+
+test_array=np.arange(10)
+print test_array
+
+test_array[ (test_array>3) & (test_array<7)]=15
+print test_array
+
+					</pre></code>
+					</section>
+				</section>
+
+
+
+			<section data-background="../images/background2.png">
+					<h2>Images</h2>
+
+					<section>
+						<p>Load a test Image from scipy</p>
+  					<pre><code class="python" data-trim contenteditable>
+			
+import scipy.misc
+import matplotlib.pyplot as plt
+
+lena = scipy.misc.lena()
+print lena.shape
+
+print type(lena)
+print lena.shape
+print lena.dtype
+
+plt.imshow(lena)
+plt.show()
+						</code></pre>
+					</section>
+				</section>
+
+		</div>
+
+		</div>
+
+		<script src="../reveal.js-3.1.0/lib/js/head.min.js"></script>
+		<script src="../reveal.js-3.1.0/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'none', // none/fade/slide/convex/concave/zoom
+				
+				math: {
+        				mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
+        				config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+   					 },
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: '../reveal.js-3.1.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../reveal.js-3.1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../reveal.js-3.1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../reveal.js-3.1.0/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../reveal.js-3.1.0/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../reveal.js-3.1.0/plugin/notes/notes.js', async: true },
+					{src: '../reveal.js-3.1.0/plugin/math/math.js', async: true },		
+					]
+			});
+
+		</script>
+
+	</body>
+</html>
