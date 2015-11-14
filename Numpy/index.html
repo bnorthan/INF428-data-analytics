@@ -336,6 +336,54 @@ plt.show()
 					</section>
 				</section>
 
+				<section data-background="../images/background2.png">
+					<h2>Audio</h2>
+
+					<section>
+						<p>Download a sound file from web and save</p>
+  					<pre><code class="python" data-trim contenteditable>
+		
+import scipy.io.wavfile
+import matplotlib.pyplot as plt
+import urllib2
+import numpy as np
+
+response = urllib2.urlopen('http://www.thesoundarchive.com/play-wav-files.asp?sound=starwars/swvader01.wav')
+print response.info()
+WAV_FILE = 'vader.wav'
+filehandle = open(WAV_FILE, 'w')
+filehandle.write(response.read())
+filehandle.close()
+
+					</code></pre>
+				</section>
+
+
+	
+				<section>
+						<p>Open sound file in python</p>
+  					<pre><code class="python" data-trim contenteditable>
+		
+sample_rate, data = scipy.io.wavfile.read(WAV_FILE)
+print "Data type", data.dtype, "Shape", data.shape
+
+						</code></pre>
+					</section>
+
+				<section>
+						<p>Plot the sound file</p>
+  					<pre><code class="python" data-trim contenteditable>
+	
+plt.title("Sound File")
+plt.plot(data)
+plt.show()
+						</code></pre>
+					</section>
+
+
+
+				</section>
+
 		</div>
 
 		</div>
