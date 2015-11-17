@@ -135,9 +135,67 @@ print data_matrix.shape
 		</section>
 
 		<section data-background="../images/background2.png">
-			<h2>Calculating stats with numpy...</h2>
+			<h2>Calculating Stats</h2>
 		
-	<section>	
+		<section>	
+						<h3>Calculate some stats...</h3>
+	 					<pre><code class="python" data-trim contenteditable>
+
+test_array=np.array([11,12,17,9,17])
+
+print "max is: ", test_array.max()
+print "min is: ", test_array.min()
+						</code></pre>
+			</section>
+		
+			<section>	
+						<h3>Measures of 'typical' value</h3>
+					<ul>
+						<li>Mean: average value</li>
+						<li>Median: center value</li>
+						<li>Mode: most common value</li>
+
+						
+					</ul>
+				</section>
+
+				<section>	
+						<h3>Calculate mean, median and mode...</h3>
+	 					<pre><code class="python" data-trim contenteditable>
+
+import scipy.stats
+
+
+print "mean is: ", test_array.mean()
+print "median is: ", np.median(test_array)
+print "mode is: ", scipy.stats.mode(test_array)
+
+						</code></pre>
+					</section>	
+
+					<section>	
+						<h3>Measures of variation</h3>
+					<ul>
+						<li>mean deviation</li>
+						<li>standard deviation</li>
+
+
+						<li><a href="http://www.separatinghyperplanes.com/2014/04/why-do-statisticians-use-standard.html">Why standard deviation??</a></li>
+					</ul>
+				</section>
+
+				<section>	
+						<h3>Calculate standard deviation</h3>
+	 					<pre><code class="python" data-trim contenteditable>
+
+print "standard deviation is: ", test_array.std()
+
+						</code></pre>
+					</section>	
+
+
+
+<section>	
 						<h3>Calculate some stats...</h3>
 	 					<pre><code class="python" data-trim contenteditable>
 
