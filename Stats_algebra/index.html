@@ -348,11 +348,117 @@ print eigvals[0]*eigvecs[:,0]
 		
 				</code></pre>
 			</section>
-
-		
-				</section>
+		</section>
 				
+			<section data-background="../images/background2.png">
+			<h2>Random numbers</h2>
+						
+			<section>	
+						<h3>Distributions</h3>
+					<ul>
+						<li>Binomial distribution</li>
+						<li>Normal distribution</li>
+					</ul>
+				</section>
+	
+				<section>
+			<h3>Binomial distribution</h3>
+			<p>Models number of sucesses in n runs of an experiment</p>
+				<pre><code class="python" data-trim contenteditable>
+import numpy as np
+import matplotlib.pyplot as py
 
+num_trials=100
+chance_of_success=.5
+
+num_sucesses=np.random.binomial(num_trials, chance_of_success)
+
+				</code></pre>
+		</section>
+
+		<section>	
+						<h3>Modelling a baseball season</h3>
+					<ul>
+						
+						<li>Player bats 4 times a game</li>
+						<li>True average is .300</li>			
+						<li>Plays 158 games</li>
+						<li>Can use binomial distribuation to model average over course of season</li>
+
+					</ul>
+
+		</section>
+
+		<section>
+			<p>Modelling a baseball season</p>
+				<pre><code class="python" data-trim contenteditable>
+
+%matplotlib inline
+
+outcome=np.random.binomial(4, 0.3, games)
+avg=np.zeros(games)
+ab, hits=0.0, 0.0
+
+for i in range(0,games):
+    ab=ab+4
+    hits=hits+outcome[i]
+    avg[i]=hits/ab
+
+py.plot(np.arange(games),avg)
+
+				</code></pre>
+		
+			</section>
+
+			<section>	
+						<h3>Normal Distribution</h3>
+					<ul>
+						<li>a.k.a. Gauss, a.k.a. Bell curve</li>
+						<li>many biological measurements</li>
+						<li>defined by mean and standard deviation</li>
+					</ul>
+
+					<p>
+$$
+P(x)=\frac{1}{\sigma \sqrt{2\pi}}e^{-(x-\mu)/2\sigma^2}
+$$
+					</p>
+				</section>
+	
+					<section>
+			<p>Generating and plot Normal Values</p>
+				<pre><code class="python" data-trim contenteditable>
+%matplotlib inline
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+def plotNormal(mean, std, num_samples):
+    normal=np.random.normal(mean, std, num_samples)
+    plt.plot(np.arange(num_samples), normal)
+    plt.title(str(num_samples,)+" random samples")
+    plt.show()
+    
+    plt.hist(normal, np.sqrt(num_samples))
+    plt.title("Histogram of "+str(num_samples)+" samples.")
+				</code></pre>
+		
+			</section>
+
+			<section>
+			<p>Try a few different values...</p>
+				<pre><code class="python" data-trim contenteditable>
+
+plotNormal(10, 100, 20000)
+plotNormal(100, 50, 20000)
+plotNormal(1000, 5, 20000)
+
+				</code></pre>
+		
+
+			</section>
+			</section>
+	
 
 		</div>
 
