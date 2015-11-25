@@ -134,7 +134,7 @@ print type(wins)
 						</code></pre>
 					</section>
 
-				<section>
+					<section>
 					<p>Data Series has lots of useful functions</p>
   					<pre><code class="python" data-trim contenteditable>
 
@@ -147,6 +147,75 @@ plt.show()
 
 						</code></pre>
 					</section>
+
+				<section>
+					<p>Open a time series</p>
+  					<pre><code class="python" data-trim contenteditable>
+# dataset from Python for Data Analysis by Wes Mckinney
+apple=pd.read_csv('../data/financial/apple.csv', index_col=0, parse_dates=True)
+
+						</code></pre>
+					</section>
+
+			<section>
+					<p>Inspect the data...</p>
+					<p>Note the index is a date</p>
+  					<pre><code class="python" data-trim contenteditable>
+
+print apple.head(2)
+print apple.tail(2)
+print apple.shape
+print apple.columns
+
+						</code></pre>
+					</section>
+
+		<section>
+					<p>Look at a range of dates...</p>
+  					<pre><code class="python" data-trim contenteditable>
+
+apple["2002-11-14":"2002-12-18"]
+
+						</code></pre>
+					</section>
+
+					<section>
+					<p>Look at data by integer index...</p>
+  					<pre><code class="python" data-trim contenteditable>
+
+print apple.iloc[8000]
+print
+print apple.iloc[8000,0]
+print apple.iloc[8000,1]
+print apple.iloc[8000,2]
+print apple.iloc[8000,3]
+print apple.iloc[8000,4]
+
+						</code></pre>
+					</section>
+
+					<section>
+					<p>Print statistics...</p>
+  					<pre><code class="python" data-trim contenteditable>
+
+print "min is:",apple['Close'].min()
+print "max is:",apple['Close'].max()
+print "standard deviation is:",apple['Close'].std()
+
+						</code></pre>
+					</section>
+
+					<section>
+					<p>Slice the dataframe by a condition...</p>
+  					<pre><code class="python" data-trim contenteditable>
+
+over_100=apple[apple['Close']>100]
+print over_100.shape
+apple['Close'][apple['Close']>100].count()
+
+						</code></pre>
+					</section>
+
 
 
 				</section>			
