@@ -59,7 +59,7 @@
 				</section>
 				
 					<section>
-					<h2>Reference Material</h2>
+					<h4>Reference Material</h4>
 					<ul>
 						<li>Chapter 4: Python Data Analysis</h3>
 						<li><a href="http://pandas.pydata.org/">Pandas</a></li>
@@ -67,7 +67,7 @@
 				</section>
 		
 				<section>
-				<h2>Pandas</h2>
+				<h4>Pandas</h4>
 					<ul>
 						<li>Two dimensionsal data structure</h3>
 						<li>sort of like a spread sheet</li>
@@ -215,9 +215,166 @@ apple['Close'][apple['Close']>100].count()
 
 						</code></pre>
 					</section>
+				</section>
+
+			<section data-background="../images/background2.png">
+					<h2>Data Aggregation</h2>
+
+						<section>
+					<p>Load mlb team data</p>
+  					<pre><code class="python" data-trim contenteditable>
+df_mlb=pd.read_csv('../data/mlb/MLB_2014_2015.csv',  parse_dates=True, index_col=0)
+print df_mlb.shape
+print df_mlb.head()
+
+						</code></pre>
+					</section>
+	
+						<section>
+					<p>Group by the year</p>
+  					<pre><code class="python" data-trim contenteditable>
+
+year_group=df_mlb.groupby('Year')
+
+print len(year_group)
+
+for name, group in year_group:
+    print "Group is: ", name
+    print group
+    print
+
+						</code></pre>
+					</section>
+	
+						<section>
+					<p>Look at some stats of the 'year' groups</p>
+  					<pre><code class="python" data-trim contenteditable>
+
+print year_group.first()
+print "Mean: "
+print year_group.mean()
+
+						</code></pre>
+					</section>
+
+						<section>
+					<p>Group by two collumns</p>
+  					<pre><code class="python" data-trim contenteditable>
+lg_year_group=df_mlb.groupby(['lg','Year'])
+print "the groups are: ", lg_year_group.groups
+						</code></pre>
+					</section>
+	
+	
+						<section>
+					<p>Print aggregated stats</p>
+  					<pre><code class="python" data-trim contenteditable>
+
+print "WF Aggregated\n", lg_year_group.agg([np.mean, np.max])
+	
+						</code></pre>
+					</section>
+					</section>
 
 
 
+
+			<section data-background="../images/background2.png">
+					<h2>More useful Pandas</h2>
+
+
+
+						<section>
+					<p>Get data by condition...</p>
+  					<pre><code class="python" data-trim contenteditable>
+
+df_2015=df_mlb[df_mlb.Year==2015]
+df_2014=df_mlb[df_mlb.Year==2014]
+
+print df_2015.shape
+print df_2014.shape
+
+						</code></pre>
+					</section>
+	
+						<section>
+					<p>Put it back together (concate)...</p>
+  					<pre><code class="python" data-trim contenteditable>
+
+df_concat=pd.concat([df_2014,df_2015])
+print df_concat.shape
+
+						</code></pre>
+					</section>
+	
+						<section>
+					<p>Put it back together (append)...</p>
+  					<pre><code class="python" data-trim contenteditable>
+
+df_append = df_2014.append(df_2015)
+print df_append.shape
+
+						</code></pre>
+					</section>
+	
+							<section>
+					<p>Handle non-existant (null) data</p>
+  					<pre><code class="python" data-trim contenteditable>
+
+from IPython.display import display
+
+df_null=pd.read_csv('../data/mlb/MLB_null.csv',  parse_dates=True, index_col=0)
+display(df_null)
+print
+display(df_null.fillna(30000))
+
+
+						</code></pre>
+					</section>
+	
+						<section>
+					<p>Pivot a table</p>
+					<p>This is useful for summarizing data</p> 
+  					<pre><code class="python" data-trim contenteditable>
+
+df_mlb_pivot=pd.pivot_table(df_mlb, columns='Year', aggfunc=np.mean)
+print df_mlb_pivot.shape
+print
+display(df_mlb_pivot)
+
+
+						</code></pre>
+					</section>
+	
+	
+						<section>
+
+					<p>Dates and time</p>
+  					<pre><code class="python" data-trim contenteditable>
+
+pd.to_datetime('02/17/2009')
+pd.to_datetime('Jan 2nd 1994')
+pd.to_datetime('Jan 2nd 1994')
+pd.to_datetime('not a date time')
+pd.to_datetime('Feb 22009')
+pd.to_datetime('Feb 2 2009t')
+
+
+						</code></pre>
+					</section>
+	
+					<section>
+					<p>Today's date</p>
+  					<pre><code class="python" data-trim contenteditable>
+
+import datetime
+
+today=datetime.date.today()
+
+						</code></pre>
+					</section>
+	
+	
 				</section>			
 		</div>
 
