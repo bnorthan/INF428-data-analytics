@@ -216,7 +216,7 @@ df_run.head()
 				<p>JSON</p>
 				<ul>
 					<li>We requested information using a URL</li>
-					<li>Information was returned in JSON format</li>i
+					<li>Information was returned in JSON format</li>
 					<li>JSON -> JavaScript Object Notation</li>
 					<li>Consists of attribute-value pairs</li>
 				</ul>
@@ -241,7 +241,7 @@ import pandas as p
 # following this example: http://stackoverflow.com/questions/13921910/python-urllib2-receive-json-response-from-url
 
 request_string="http://maps.googleapis.com/maps/api/elevation/json?locations=42,73&sensor=false"    
-response=urlib.urlopen(request_string)i
+response=urlib.urlopen(request_string)
 print type(response)
 data=js.load(response)
 print type(data)
@@ -267,8 +267,50 @@ print type(data['results][0])
 
 						</code></pre>
 					</section>
-				
+				</section>
 
+
+
+			<section data-background="../images/background2.png">
+					<h2>HTML</h2>
+	
+			<section>
+				<p>HTML basics</p>
+				<ul>
+					<li>Hypertext Markup Language (HTML)</li>
+					<li>tags surrouded by brackets <html></li>
+					<li>HTML can be thought of as a form of data</li>
+					<li>Consists of attribute-value pairs</li>
+					<li>Scraping HTML - last resort</li>
+					<li>View code -> tools -> view source </li>
+				</ul>
+			</section>
+
+			<section>
+				<p>Simple html</p>
+  					<pre><code class="python" data-trim contenteditable>
+
+&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;TITLE&gt;A simple web site&lt;/TITLE&gt;
+&lt;/HEAD&gt;
+ 
+&lt;BODY BGCOLOR=&quot;FFFFAA&quot;&gt;
+
+&lt;a href=&quot;http://www.bluejays.com&quot;&gt;Link Name&lt;/a&gt;
+is a link to my favorite site
+ 
+&lt;H1&gt;This is a Header&lt;/H1&gt;
+&lt;H2&gt;This is a Medium Header&lt;/H2&gt;
+
+Send me mail at &lt;a href=&quot;mailto:bnorthan@gmail.com&quot;&gt; support@yourcompany.com&lt;/a&gt;.
+&lt;P&gt; This is a new paragraph!&lt;/p&gt;
+&lt;/BODY&lt;html&gt;
+
+&lt;/HTML&gt;
+
+						</code></pre>
+	
 
 			</section>
 
