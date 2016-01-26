@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Week 2: Principles</title>
+
+		<meta name="description" content "Week 2 of INF 428: ">
+		<meta name="author" content="Brian Northan">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="../reveal.js-3.1.0/css/reveal.css">
+		<link rel="stylesheet" href="../reveal.js-3.1.0/css/theme/sky.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="../reveal.js-3.1.0/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js-3.1.0/css/print/pdf.css' : '../reveal.js-3.1.0/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<script type="text/javascript"
+            		src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    		</script>
+
+		<!--[if lt IE 9]>
+		<script src="../reveal.js-3.1.0/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+				<div class="slides">
+				<section data-background="../images/background2.png">
+					<h2>INF 428</h2>
+					<h3>Week 2 Principles</h3>
+			
+					<p>
+					<small>
+						<a href="https://github.com/bnorthan">Brian Northan</a>,
+						<a href="http://www.truenorth-ia.com/">True North Intelligent Algorithms LLC</a>
+					</small>
+					</p>
+				</section>
+
+<div class="slides">
+				<section data-background="../images/background2.png">
+					<h3>This week</h3>
+			
+					<ul>
+						<li>Install/access KNIME and Anaconda</li>
+						<li>Learn about csv files</li>
+						<li>Explore .csv files in Spread sheet/KNIME/Python</li>
+						<li>Learn a bit about "dirty" data</li>
+						<li>Go over Python examples</li>
+					</ul>
+					</section>
+
+							<section data-background="../images/background2.png">
+				<h3>Resources</h3>
+					<section>
+						<ul><li>Google Drive
+					<ul>
+						<li><a href="http://scikit-learn.org/stable/">Google drive app</a></li>
+					</ul>
+					</li>
+
+					<li>Black board
+				
+					</li>
+
+				<li>Slides are on Github
+					<ul>
+						<li>bnorthan.github.io/INF428-data-analytics </li>
+					</li></ul>
+				</section>	
+
+			</section>
+				</section>
+
+							<section data-background="../images/background2.png">
+					<h3>KNIME</h3>
+
+					<ul>
+						<li>Leading open platform for data-driven innovation</li>
+						<li>GUI based, Node based</li>
+						<li>Node based</li>
+						<li>Install KNIME Analytics platform</li>
+						<li>May have to install Java</li>
+						<li>KNIME is similar to Rapidminer</li>
+						<li><a href="https://tech.knime.org/installation-0">Installing/Getting started</a></li>
+				</ul>
+
+
+			</section>	
+			
+			<section data-background="../images/background2.png">
+				<h3>KNIME Organization</h3>
+					<section>
+						<ul>
+							<li>Work space is made of work flows</li>
+							<li>Work flows are made of nodes</li>
+							<li>Look at "Open Files" work flow
+					<ul>
+						<li>What is a node?</li> 
+						<li>What is node repository?
+							<ul>
+								<li>Searching</li>
+								<li>Install new nodes</li>
+							</ul></li>
+						<li>Help on nodes</li>
+					</ul></li>
+				</section>
+			
+			</section>
+
+
+					<section data-background="../images/background2.png">
+						<h3>Configuring Nodes</h3>
+
+							<section>
+					<ul>
+						<li>Red - not configured properly</li>
+						<li>Yellow - configured but has not been executed</li>
+						<li>Green - executed successfully</li>
+					</ul></li>
+						<td>
+								<img src="images/configure_execute.png">
+						</td>
+				</section>	
+					
+				<section>
+					<ul>
+						<li>Right click on node to see menu</li>
+						<li>Top option - configure (F6) </li>
+						<li>Lower option(s) - view output</li>
+					</ul></li>
+						<td>
+								<img src="images/configure_execute.png">
+						</td>
+				</section>	
+			
+		
+			</section>
+								<section data-background="../images/background2.png">
+					<h2>Trouble shooting</h2>
+					<ul>	
+						<li>Can everybody get KNIME working??</li>
+							<li>Can you get "open files" work flow running</li>
+						</ul>
+					</section>
+				</section>
+		
+					<section data-background="../images/background2.png">
+				<h3>IPython notebook</h3>
+					<ul>
+						<li><a href="http://ipython.org/notebook.html">IPython Notebook website</a></li>
+						<li>Web based computational environment</li>
+						<li>Run python on a web page</li>
+						<li>Divide computational steps into cells</li>
+						<li><a href="https://www.continuum.io/downloads">Install Anaconda with Python 2.7</a></li>
+						<li><a href="https://52.89.8.63:8888/tree">Example notebook running on AWS</a></li>
+					</ul>
+				</section>
+
+					<section data-background="../images/background2.png">
+						<h3>Python</h3>
+				
+							<section>
+							<ul>
+						<li>General purpose, high level</li>
+						<li>Easy to learn but powerful</li>
+						<li>Can run in an interactive shell</li>
+						<li>Can run scripts</li>
+						<li>Can run programs made of modules and classes</li>
+							</ul>
+							</section>
+				
+							<section>
+								<h4>Extended with modules and packages</h4>
+								<ul>
+									<li><a href="http://matplotlib.org/">Matplotlib (plotting module)</a></li>
+									<li><a href="http://pandas.pydata.org/">Pandas (data analysis)</a></li>
+									<li><a href="http://scikit-learn.org/stable/">Scikitlearn (machine learning)</a></li>
+						</ul>
+							</section>
+			</section>
+			
+			<section data-background="../images/background2.png">
+			
+					<h3>Let's get some data</h3>
+
+						<ul>
+							<li> CSV data (Comma separated values) </li>
+							<li> Literally rows of values separated by commas </li>
+							<pre>
+team, wins, losses 
+Blue Jays, 93, 69
+Yankees, 87, 75
+Orioles, 81, 81
+Red Sox, 78, 84
+						</pre>
+							<li><a href="http://www.baseball-reference.com/leagues/AL/2015-standard-batting.shtml">Baseball Statistics</a></li>
+							<li><a href="http://introcs.cs.princeton.edu/java/data/">Princeton (Mcdonalds, DJIA, etc.)</a></li>
+						</ul>
+					</section>
+		
+<section data-background="../images/background2.png">
+				<h3>Try...</h3>
+					<section>
+						<ul>
+							<li>Open up MLB standings in excel</li>
+							<li>Open up MLB standings in KNIME</li>
+							<li>Open up MLB standings in Ipython notebook</li>
+						
+							<ul>
+			</section>	
+			</section>
+
+<section data-background="../images/background2.png">
+				<h3>Try...</h3>
+					<section>
+						<ul>
+							<li>MLB 2015 teams</li>
+							<li>fortune 500</li>
+								<ul>
+									<li>This one has issues...</li>
+									<li>Some numbers missing</li>
+									<li>Format seems to change in the middle of the file</li>
+									<li>Excle/Spreadsheet is useful in this case</li>
+							<li>Open up MLB standings in Ipython notebook</li>
+						
+							<ul>
+			</section>	
+			</section>
+
+
+		
+
+							
+		</div>
+
+		</div>
+
+		<script src="../reveal.js-3.1.0/lib/js/head.min.js"></script>
+		<script src="../reveal.js-3.1.0/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: false,
+
+				transition: 'none', // none/fade/slide/convex/concave/zoom
+				
+				math: {
+        				mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
+        				config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+   					 },
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: '../reveal.js-3.1.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../reveal.js-3.1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../reveal.js-3.1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../reveal.js-3.1.0/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../reveal.js-3.1.0/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../reveal.js-3.1.0/plugin/notes/notes.js', async: true },
+					{src: '../reveal.js-3.1.0/plugin/math/math.js', async: true },		
+					]
+			});
+
+		</script>
+
+	</body>
+</html>
