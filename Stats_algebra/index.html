@@ -62,16 +62,18 @@
 				<h2>Statistics and Algebra</h2>
 				
 					<section>	
-						<h3>Why Statistics??</h3>
+						<h3>Today...</h3>
 					<ul>
 						<li>Summarize raw data</li>
 						<li>Compute metrics like mean and standard deviation</li>
 						<li>Test if metrics are significant</li>
+						<li>Look at real examples in Ipython Notebook and KNIME</li>
+
 					</ul>
 				</section>
 
 				<section>
-					<h2>Why Algebra??</h2>
+					<h3>Why Algebra??</h3>
 					<ul>
 						<li>Algrebra is used to solve systems of equations</li>
 						<li>Linear algebra is used to implement Machine Learning</li>
@@ -79,7 +81,7 @@
 				</section>
 
 				<section>
-					<h2>Reference Material</h2>
+					<h3>Reference Material</h3>
 					<ul>
 						<li>Chapter 3: Python Data Analysis</h3>
 					</ul>
@@ -109,7 +111,7 @@ print "Matplotlib version", mpl.__version__
 				
 			
 			<section data-background="../images/background2.png">
-			<h2>.csv files (round 1)</h2>
+			<h2>.csv files (round 2)</h2>
 				
 						<section>	
 						<h3>What is .csv??</h3>
@@ -120,7 +122,7 @@ print "Matplotlib version", mpl.__version__
 					</ul>
 				</section>
 
-			<section>	
+				<section>	
 						<h3>Open .csv with numpy</h3>
 	 					<pre><code class="python" data-trim contenteditable>
 		
@@ -132,11 +134,31 @@ data_matrix=np.loadtxt(file_name, delimiter=',', usecols=(1,), skiprows=1, unpac
 print data_matrix.shape
 						</code></pre>
 			</section>
+				<section>	
+						<h3>Open .csv with pandas</h3>
+	 					<pre><code class="python" data-trim contenteditable>
+import pandas as pd
+data_pandas=pd.read_csv(file_name)
+print type(data_pandas)
+print data_pandas.head()
+
+						</code></pre>
+			</section>
+		<section>	
+						<h3>Open .csv with KNIME</h3>
+					<img src="images/knimecsv.jpg">
+</section>
 		</section>
 
 		<section data-background="../images/background2.png">
 			<h2>Calculating Stats</h2>
-		
+		<section>
+			<h3>Make some data to work with...</h3>
+	 					<pre><code class="python" data-trim contenteditable>
+
+test_array=np.array([11,12,17,9,17])
+					</code></pre>
+</section>	
 		<section>	
 						<h3>Calculate some stats...</h3>
 	 					<pre><code class="python" data-trim contenteditable>
@@ -181,6 +203,9 @@ print "mode is: ", scipy.stats.mode(test_array)
 
 
 						<li><a href="http://www.separatinghyperplanes.com/2014/04/why-do-statisticians-use-standard.html">Why standard deviation??</a></li>
+					<ul>
+						<li>Measure how far data points are from average</li>
+						</ul>
 					</ul>
 				</section>
 
@@ -207,6 +232,117 @@ print "standard deviation is: ", data_matrix.std()
 						</code></pre>
 			</section>
 		</section>
+
+
+
+			<section data-background="../images/background2.png">
+				<h3>Hypothesis Testing</h3>
+			
+					<section>
+					<h3>Null Hypothesis</h3>
+					<p align="left">The term "null hypothesis" usually refers to a general statement or default position that there is no relationship between two measured phenomena, or no difference among groups</p>
+				</section>
+				
+				<section>
+					<h3>Null Hypothesis</h3>
+					<p>NO DIFFERENCE AMONG GROUPS</p>
+				</section>
+				<section>
+					<h3>P-value</h3>
+				 <p align="left">The p-value is the probability of obtaining the observed sample results (or a more extreme result) when the null hypothesis is actually true.</p>
+				</section>
+					
+					<section>
+					<h4>Single sample t-test</h4>
+					<ul>
+					<li> $t = \frac{\overline{x} - \mu_0}{s/\sqrt{n}}$</li>
+					<li><a href="https://en.wikipedia.org/wiki/Student%27s_t-test#One-sample_t-test">Wikipedia Explanation</a>
+
+					</ul>
+					<p align="left">Computes statistics for the single sample t-test, also know as one sample t-test. The single sample t-test tests the null hypothesis that the population mean is equal to a given number.</p> 
+
+
+				</section>
+				
+				<section>
+					<h4>Single sample t-test</h4>
+					<ul>
+					<li> $\overline{x}$ sample mean</li>
+					<li>$\mu_0$ hypothesis mean</li>
+					<li> Null hypothesis -> $\overline{x}=\mu_0$</li>
+					<li> high P -> $\overline{x}$ more likely to be close to $\mu_0$,</li>
+					</ul>
+
+
+				</section>
+
+
+				<section>
+					<h4>Single sample t-test with KNIME</h4>
+					
+					<img src="images/knimestats2.jpg">
+				</section>
+				<section>
+					<h4>Single sample t-test with KNIME</h4>
+					
+					<img src="images/knime_ttest.jpg">
+					
+				</section>
+				
+				<section>
+					<h4>Single sample t-test with ipython notebook</h4>
+
+					<ul>
+					<li>Human body temperature example</li>
+					</ul>
+
+			<pre><code class="python" data-trim contenteditable>
+import pandas as pd
+temps=pd.read_csv("../../data/health care/temps.csv")
+temps=temps.as_matrix()
+scipy.stats.ttest_1samp(temps, 98.6)
+
+			</code></pre>
+
+				</section>
+
+			<section>
+				<h3>Independent (unpaired) samples</h3>
+					<ul>
+						<li>Tests if mean values are different between two samples </li>
+						<li>Example: blood pressure between two groups (men and women) </li>
+						<li><a href="https://en.wikipedia.org/wiki/Student%27s_t-test#Independent_.28unpaired.29_samples">Wikpedia</a></li>
+
+			</section>
+
+			<section>
+				<h3>Paired samples</h3>
+					<ul>
+						<li>Tests if mean values are different when a group is tested twice </li>
+						<li>Example: blood pressure before and after a treatment</li>
+						<li><a href="https://en.wikipedia.org/wiki/Student%27s_t-test#Paired_samples">Wikpedia</a></li>
+
+			</section>
+
+			<section>
+				<h3>KNIME Example</h3>
+			</section>
+
+<section>	
+						<h3>Ipython notebook example</h3>
+	 					<pre><code class="python" data-trim contenteditable>
+import pandas as pd
+import scipy.stats as stats
+mlb=pd.read_csv("../../data/baseball/MLB2015Teams.csv")
+losers=mlb[mlb.winning_team==False]
+winners=mlb[mlb.winning_team==True]
+stats.ttest_ind(losers.HR, winners.HR)
+
+						</code></pre>
+			</section>
+
+			</section>
+
 
 			<section data-background="../images/background2.png">
 			<h2>Linear Algebra</h2>
