@@ -323,22 +323,99 @@ scipy.stats.ttest_1samp(temps, 98.6)
 
 			</section>
 
+				<section>
+				<h3>KNIME/IPython Example</h3>
+				<ul>
+					<li>data -> data/baseball/MLB2015Pitching.csv</li>
+					<li>KNIME workflow -> WinningVsLosingTeams</li>
+					<li>IPython notebook -> Baseball Teams</li> 
+					<li>Remember! Make copy of class google drive (MyINF428 or something)</li>
+				</ul>
+			</section>
+			
+				<section>
+				<h3>KNIME/IPython Example Step 1</h3>
+				<ul>
+					<li>open data -> data/baseball/MLB2015Pitching.csv</li>
+					<li>Only include first 15 rows (0-14?)</li>
+				</ul>
+			</section>
+			
+
 			<section>
-				<h3>KNIME Example</h3>
+				<h4>KNIME Step 1</h4>
+				<p>Need to click on 'advanced' configure option</p>	
+				<img src="images/advancedrows.jpg">
 			</section>
-
-<section>	
-						<h3>Ipython notebook example</h3>
-	 					<pre><code class="python" data-trim contenteditable>
+				<section>
+				<h4>IPython Step 1</h4>
+				<p>Open with Pandas</p>	
+	 			<pre><code class="python" data-trim contenteditable>
 import pandas as pd
-import scipy.stats as stats
-mlb=pd.read_csv("../../data/baseball/MLB2015Teams.csv")
-losers=mlb[mlb.winning_team==False]
-winners=mlb[mlb.winning_team==True]
-stats.ttest_ind(losers.HR, winners.HR)
-
-						</code></pre>
+mlb=pd.read_csv("../../data/baseball/MLB2015Pitching.csv")
+				</code></pre>	
 			</section>
+
+			<section>
+				<h4>IPython Step 1</h4>
+				<p>Only use rows 1 to 15</p>	
+	 			<pre><code class="python" data-trim contenteditable>
+mlb=mlb[0:15]
+				</code></pre>	
+			</section>
+	<section>
+				<h4>IPython Step 1</h4>
+				<p>Inspect data</p>	
+	 			<pre><code class="python" data-trim contenteditable>
+print mlb.shape
+print mlb.head()
+				</code></pre>	
+			</section>
+			<section>
+				<p>Should have the same thing...</p>	
+				<img src="images/knimedata.jpg">
+			</section>
+	
+			<section>
+				<h4>KNIME Step 2 Separate Winning and losing teams</h4>
+				<ul>
+				<li>Use Column filter to get rid of several columns</li>
+
+				<ul><li>Page 55 of the book (or search for 'Column')</li></ul>
+				<li>Use Numeric binner to group winners and losers</li>
+				<ul><li>Page 104 of the book (or search for 'Numeric Binner')</li>
+				</ul>
+			</section>
+			<section>
+				<h4>IPython Step 2</h4>
+				<p>Select Data by Advanced Indexing</p>	
+	 			<pre><code class="python" data-trim contenteditable>
+losers=mlb[mlb.winning_team==False]
+winners=mlb[mlb.winning_team==True]	
+			
+			</code></pre>	
+			</section>
+		<section>
+				<h4>IPython Step 3</h4>
+				<p>Perform the independent t-test using scipy</p>	
+	 			<pre><code class="python" data-trim contenteditable>
+import scipy.stats as stats
+stats.ttest_ind(losers.HR, winners.HR)
+			</code></pre>	
+			</section>
+
+			<section>
+				<p>And in KNIME use the Indenpendent groups t-test node...</p>	
+				<img src="images/knimet-test.jpg">
+			</section>
+	
+
+
+		<section>	
+						<h3>KNIME/Ipython t-test</h3>
+				Do the answers agree??
+
+		</section>
 
 			</section>
 
