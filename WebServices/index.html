@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Web Services</title>
+
+		<meta name="description" content "Pandas lessons">
+		<meta name="author" content="Brian Northan">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="../reveal.js-3.1.0/css/reveal.css">
+		<link rel="stylesheet" href="../reveal.js-3.1.0/css/theme/beige.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="../reveal.js-3.1.0/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js-3.1.0/css/print/pdf.css' : '../reveal.js-3.1.0/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<script type="text/javascript"
+            		src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    		</script>
+
+		<!--[if lt IE 9]>
+		<script src="../reveal.js-3.1.0/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+		
+				<section data-background="../images/background2.png">
+					<h2>INF 428: Web Services</h2>
+		
+					<section>
+					<p>
+						<small>
+							<a href="https://github.com/bnorthan">Brian Northan</a>,
+							<a href="http://www.truenorth-ia.com/">True North Intelligent Algorithms LLC</a>
+						</small>
+					</p>
+				</section>
+				
+					<section>
+					<h4>Reference Material</h4>
+					<ul>
+						<li>Chapter 5: Python Data Analysis</li>
+						<ul>
+						<li>Writing .csv files with numpy and pandas (pg. 120)</li>
+						<li>Reading and writing to Excel with pandas (pg. 129)</li>
+						<li>Using REST web services and JSON (pg. 131)</li>
+						<li>Reading and writing JSON with pandas (pg. 132)</li>
+						<li>Parsing RSS and Atom feeds</li>
+						</ul>
+					</ul>
+				</section>
+			</section>	
+			
+			<section data-background="../images/background2.png">
+					<h2>CSV Data</h2>
+
+					<section>
+						<p>CSV = Comma separated values</p>
+					</section>
+
+					<section>
+						<p>Save to CSV using numpy</p>
+  					<pre><code class="python" data-trim contenteditable>
+
+import numpy as np
+import pandas as pd
+from IPython.display import display
+
+np.random.seed(42)
+
+test=np.random.randn(2,5)
+display(test)
+
+np.savetxt('np.csv', test, delimiter=',', header='one,two,three,four,five')				
+
+
+						</code></pre>
+					</section>
+
+
+						<section>
+						<p>Save to CSV using pandas</p>
+  					<pre><code class="python" data-trim contenteditable>
+
+df=pd.DataFrame(test)
+df.to_csv('np2.csv')
+
+						</code></pre>
+					</section>
+				</section>			
+
+	
+			<section data-background="../images/background2.png">
+					<h2>Excel Data</h2>
+
+
+				<section>
+						<p>Excel</p>
+						<ul>
+							  <li>Convenient to share</li>
+								<li>Can store multiple dataframes as sheets</li>
+						</ul>  
+					</section>
+
+					<section>
+						<p>Create another dataframe</p>
+						<pre><code class="python" data-trim contenteditable>
+
+test2=np.random.randn(2,5)
+df2=pd.DataFrame(test2)i
+
+						</code></pre>
+					</section>
+
+						<section>
+						<p>Save both dataframes to Excel</p>
+  					<pre><code class="python" data-trim contenteditable>
+
+writer = pd.ExcelWriter('np.xlsx')
+df.to_excel(writer, 'Data 0')
+df2.to_excel(writer, 'Data 1')
+writer.save()
+
+						</code></pre>
+					</section>
+			
+					<section>
+						<p>Read Excel</p>
+						<p>Remember-> Excel files have multiple sheets</p>
+  					<pre><code class="python" data-trim contenteditable>
+
+xl=pd.ExcelFile('../data/running/Grand_Prix_Post_Stockadeathontemp.xls')
+xl.sheet_names
+
+						</code></pre>
+					</section>
+			
+					<section>
+						<p>Extract a sheet as a DataFrame</p>
+  					<pre><code class="python" data-trim contenteditable>
+
+print type(xl)
+df_run=xl.parse('Male')
+print type(df_run)
+df_run.head()
+
+						</code></pre>
+					</section>
+				</section>			
+
+			
+			
+			<section data-background="../images/background2.png">
+					<h2>Web API</h2>
+					
+					<ul>
+						<li>API=Application Programming Interface</li>
+						<li>Defines a message system</li>
+						<li>Defines protocols that get information from the cloud</li>
+						<li>Typically return JSON or XML</li>
+					</ul>  
+				</section>
+			</section>
+			
+			<section data-background="../images/background2.png">
+					<h2>Examples</h2>
+					
+					<ul>
+						<li>Facebook</li>
+						<li>Google Maps</li>
+						<li>Twitter</li>
+						<li>YouTube</li>
+						<li>AccuWeather</li>
+						<li>LinkedIn</li>
+						<li>Amazon</li>
+					</ul>  
+				</section>
+			</section>
+	
+		<section data-background="../images/background2.png">
+					<h2>REST web services</h2>
+					
+					<p>What is REST?</p>
+					<ul>
+						  <li>Representational State Transfer</li>
+							<li>Data is retrieved using URIs</li>
+							<li>URI-> Uniform Resource Identifier</li>
+					</ul>  
+				</section>
+
+
+	
+	<section data-background="../images/background2.png">
+					<h2>REST - http methods</h2>
+					
+					<ul>
+						<li>GET - request data</li>
+						<li>POST - accept data</li>
+					</ul>  
+				</section>
+
+		<section data-background="../images/background2.png">
+					<h2>REST web services</h2>
+				<section>
+					<h2>Example</h2>
+					<p>Enter this address in a browser</p>term
+					<blockquote class="graybox">
+						http://maps.googleapis.com/maps/api/elevation/json?locations=42,73&sensor=false
+					</blockquote>
+
+				</section>
+				<section>
+					<p>You should get</p>
+					<pre>
+{
+"results" : [
+{
+	"elevation" : 2560.82666015625,
+		"location" : {
+		"lat" : 42,
+		"lng" : 73
+},
+"resolution" : 152.7032318115234
+}],
+	"status" : "OK"
+}
+					</pre>
+
+			</section>
+				
+			<section>
+				<p>What just happened</p>
+				<ul>
+					<li>We requested information using a URL</li>
+					<li>Information was returned in JSON format</li>
+				</ul>
+			</section>
+
+
+			<section>
+				<p>JSON</p>
+				<ul>
+					<li>We requested information using a URL</li>
+					<li>Information was returned in JSON format</li>
+					<li>JSON -> JavaScript Object Notation</li>
+					<li>Consists of attribute-value pairs</li>
+				</ul>
+			</section>
+
+			<section>
+						<p>REST with Python</p>
+  					<pre><code class="python" data-trim contenteditable>
+# first we need to import some modules
+# utility to read json format
+import json as js
+# urllib2 is a module for fetching URL (Uniform Resource Locator) data
+import urllib2 as urlib
+# import pandas
+import pandas as p
+						</code></pre>
+					</section>
+	
+						<section>
+						<p>REST with Python</p>
+  					<pre><code class="python" data-trim contenteditable>
+# following this example: http://stackoverflow.com/questions/13921910/python-urllib2-receive-json-response-from-url
+
+request_string="http://maps.googleapis.com/maps/api/elevation/json?locations=42,73&sensor=false"    
+response=urlib.urlopen(request_string)
+print type(response)
+data=js.load(response)
+print type(data)
+	
+						</code></pre>
+					</section>
+
+					<section>
+						<p>Use 'print' and 'type' to inspect data</p>
+  					<pre><code class="python" data-trim contenteditable>
+print data
+print data['status']
+print type(data['results'])
+print type(data['results][0])
+
+						</code></pre>
+					</section>
+				
+
+			<section>
+						<p>Exercise - Find elevation of Everest</p>
+  					<pre><code class="python" data-trim contenteditable>
+
+						</code></pre>
+					</section>
+				</section>
+
+
+
+			<section data-background="../images/background2.png">
+					<h2>HTML</h2>
+	
+			<section>
+				<p>HTML basics</p>
+				<ul>
+					<li>Hypertext Markup Language (HTML)</li>
+					<li>tags surrouded by brackets <html></li>
+					<li>HTML can be thought of as a form of data</li>
+					<li>Consists of attribute-value pairs</li>
+					<li>Scraping HTML - last resort</li>
+					<li>View code -> tools -> view source </li>
+				</ul>
+			</section>
+
+			<section>
+				<p>Simple html</p>
+  					<pre><code class="python" data-trim contenteditable>
+
+&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;TITLE&gt;A simple web site&lt;/TITLE&gt;
+&lt;/HEAD&gt;
+ 
+&lt;BODY BGCOLOR=&quot;FFFFAA&quot;&gt;
+
+&lt;a href=&quot;http://www.bluejays.com&quot;&gt;Link Name&lt;/a&gt;
+is a link to my favorite site
+ 
+&lt;H1&gt;This is a Header&lt;/H1&gt;
+&lt;H2&gt;This is a Medium Header&lt;/H2&gt;
+
+Send me mail at &lt;a href=&quot;mailto:bnorthan@gmail.com&quot;&gt; support@yourcompany.com&lt;/a&gt;.
+&lt;P&gt; This is a new paragraph!&lt;/p&gt;
+&lt;/BODY&lt;html&gt;
+
+&lt;/HTML&gt;
+
+						</code></pre>
+	
+
+			</section>
+
+
+	
+			</div>
+
+		</div>
+
+		<script src="../reveal.js-3.1.0/lib/js/head.min.js"></script>
+		<script src="../reveal.js-3.1.0/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'none', // none/fade/slide/convex/concave/zoom
+				
+				math: {
+        				mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
+        				config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+   					 },
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: '../reveal.js-3.1.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../reveal.js-3.1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../reveal.js-3.1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../reveal.js-3.1.0/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../reveal.js-3.1.0/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../reveal.js-3.1.0/plugin/notes/notes.js', async: true },
+					{src: '../reveal.js-3.1.0/plugin/math/math.js', async: true },		
+					]
+			});
+
+		</script>
+
+	</body>
+</html>
