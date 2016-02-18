@@ -62,14 +62,44 @@
 					<h4>Reference Material</h4>
 					<ul>
 						<li>Chapter 6: Python Data Analysis</h3>
+						<li>Chapter 3: KNIME Beginner's luck</h3>
 					</ul>
 				</section>
-			</section>	
+			</section>
+
+			<section data-background="../images/background2.png">
+					<h2>Visualization... Where do we start?</h2>
+			</section>
 			
+			<section data-background="../images/background2.png">
+				<img src="./plots.png">
+			</section>
+
+			<section data-background="../images/background2.png">
+					<h2>Google "Data Visualization"</h2>
+					<section>
+						<ul>
+						<li>Overwhelming number of tools</li>
+						<li>Top 30 lists</li>
+						<li>Some are programs (excel, tableau, KNIME)</li>
+						<li>Some are programming tools (ggplot, matplotlib, D3.js)</li>
+						</ul>
+					</section>
+			</section>
+
+
+
+
+
+
 			<section data-background="../images/background2.png">
 					<h2>Basic Plotting</h2>
 
-					<section>
+				<section>
+					<p>We've allready seen basic plotting with KNIME</p>
+				</section>
+
+				<section>
 						<p>Plotting in Python with matplotlib</p>
 					</section>
 
@@ -77,8 +107,16 @@
 						<p>Basic Plotting example</p>
   					<pre><code class="python" data-trim contenteditable>
 
-import numpy as np
 import matplotlib.pyplot as plt
+
+%matplotlib inline
+
+x=[1,2,3,4,5]
+y=[10, 20, 10, 30, 40]
+
+plt.plot(x,y)
+plt.show()
+
 
 						</code></pre>
 					</section>
