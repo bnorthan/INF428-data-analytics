@@ -59,9 +59,7 @@
 				</section>
 				
 				<section>
-					<h4>What will you learn today?</h4>
 					<ul>
-						<li>Pictures in Markdown</li>
 						<li>Pandas</li>
 						<li>Read Excel</li>
 						<li>Groupby</li>
@@ -77,6 +75,8 @@
 					<ul>
 						<li>Chapter 4: Python Data Analysis</h3>
 						<li><a href="http://pandas.pydata.org/">Pandas</a></li>
+						<li>Chapter 5: KNIME Beginner's Luck</h3>
+					
 					</ul>
 				</section>
 		</section>
@@ -234,7 +234,7 @@ apple['Close'][apple['Close']>100].count()
 				</section>
 
 			<section data-background="../images/background2.png">
-					<h2>Data Aggregation</h2>
+					<h2>Groups and Aggregation</h2>
 
 						<section>
 					<p>Load mlb team data</p>
@@ -263,7 +263,7 @@ for name, group in year_group:
 					</section>
 	
 						<section>
-					<p>Look at some stats of the 'year' groups</p>
+					<p>Aggregate 'year' groups by a stat</p>
   					<pre><code class="python" data-trim contenteditable>
 
 print year_group.first()
@@ -290,12 +290,62 @@ print "WF Aggregated\n", lg_year_group.agg([np.mean, np.max])
 	
 						</code></pre>
 					</section>
-					</section>
+					
+</section>
+
+		<section data-background="../images/background2.png">
+					<h2>Groupby in KNIME</h2>
+						<img src="./groupby.jpg">
+		</section>
+
+		<section data-background="../images/background2.png">
+					<h2>Goupby aggregate setting in KNIME</h2>
+						<img src="./aggregate.jpg">
+		</section>
+
+		<section data-background="../images/background2.png">
+					<h2>Merging/Joining Dataframes</h2>
 
 
 
+				<section>
+					<ul>
+						<li>Similar to relational database join</li>
+						<li><a href="http://pandas.pydata.org/pandas-docs/stable/merging.html">documentation</a></li>
+						<li>merge
+							<ul>
+								<li>joins two dataframes (left and right)</li>
+								<li>how -> inner, outer, left, right</li>
+								<li>on -> what to join on</li>
+							</ul>
+						
+						</li>
+					</ul>
+				</section>
+				<section>
+					<p>Example</p>
+				<pre><code class="python" data-trim contenteditable>
+import pandas as pd
+locations=pd.read_csv('../../data/basketball/teamlocations.csv')
+zipcodes=pd.read_csv('../../data/misc/zipcode.csv')
 
-			<section data-background="../images/background2.png">
+joined=pd.merge(locations, zipcodes, left_on='Zip', right_on='zip')
+
+
+				</code></pre>
+		
+
+				</section>
+	
+		</section>
+  			<section data-background="../images/background2.png">
+					<h2>Join data in KNIME</h2>
+						<img src="./join.jpg">
+		</section>
+
+	
+			
+		<section data-background="../images/background2.png">
 					<h2>More useful Pandas</h2>
 
 
