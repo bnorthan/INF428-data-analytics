@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Time Series</title>
+
+		<meta name="description" content "Time Series lessons">
+		<meta name="author" content="Brian Northan">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="../reveal.js-3.1.0/css/reveal.css">
+		<link rel="stylesheet" href="../reveal.js-3.1.0/css/theme/beige.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="../reveal.js-3.1.0/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js-3.1.0/css/print/pdf.css' : '../reveal.js-3.1.0/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<script type="text/javascript"
+            		src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    		</script>
+
+		<!--[if lt IE 9]>
+		<script src="../reveal.js-3.1.0/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+		
+				<section data-background="../images/background2.png">
+					<h2>INF 428: Time Series</h2>
+		
+					<section>
+					<p>
+						<small>
+							<a href="https://github.com/bnorthan">Brian Northan</a>,
+							<a href="http://www.truenorth-ia.com/">True North Intelligent Algorithms LLC</a>
+						</small>
+					</p>
+				</section>
+				
+					<section>
+					<h4>Reference Material</h4>
+					<ul>
+						<li>Chapter 7: Python Data Analysis</li>
+						<ul>
+						<li>Moving Averages (pg. 166)</li>
+						<li>Window Functions (pg. 169)</li>
+						<li>Autocorrelation (pg. 173)</li>
+						</ul>
+					</ul>
+				</section>
+			</section>	
+			
+		
+			
+			<section data-background="../images/background2.png">
+					<h2>Time Series</h2>
+					
+					<ul>
+						<li>List of data points ordered by time</li>
+						<li>Examine trends that evolve with time</li>
+					</ul>  
+				</section>
+			</section>
+			
+			<section data-background="../images/background2.png">
+					<h2>Example Bautista stats</h2>
+					
+					<ul>
+						<li>Day by day stats for a season</li>
+						<li>Dates can be tricky (sometimes need to convert them)</li>
+						<li>Shows plotting a time series and annotating it</li>
+						<li>ALso show using Bokeh to generate an interactive plot</li>
+						<li><a href="http://bokeh.pydata.org/en/latest/">Bokeh Documentation</a></li>
+						<li><a href="http://52.37.154.63:8888/alltime">Another Bokeh example</a></li>
+					</ul>  
+				</section>
+			</section>
+	
+		<section data-background="../images/background2.png">
+					<h2>Moving Averages</h2>
+					
+					<ul>
+						  <li>Each point is the average of the previous n points</li>
+						  <li>Used to get rid of noise </li>
+					</ul>  
+				</section>
+
+<section data-background="../images/background2.png">
+					<h2>Windowed Average</h2>
+					
+					<ul>
+						  <li>Each point is the WEIGHTED average of the previous n points</li>
+						  
+						  <li>Weighting is done by a "window" function</li>
+						  <li>Weighting is done so more recent points are more important</li>
+						  <li>Used to get rid of noise </li>
+					</ul>  
+				</section>
+
+
+<section data-background="../images/background2.png">
+					<h2>Autocorrelation</h2>
+					
+					<ul>
+						  <li>Correlation within a time series</li>
+						  
+						  <li>Can indicate periodic trends</li>
+						  <li>For example temperatures over a period of years</li>
+						  <li>Autocorrelation should be cyclical</li>
+					</ul>  
+				</section>
+
+
+	
+			</div>
+
+		</div>
+
+		<script src="../reveal.js-3.1.0/lib/js/head.min.js"></script>
+		<script src="../reveal.js-3.1.0/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'none', // none/fade/slide/convex/concave/zoom
+				
+				math: {
+        				mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
+        				config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+   					 },
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: '../reveal.js-3.1.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../reveal.js-3.1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../reveal.js-3.1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../reveal.js-3.1.0/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../reveal.js-3.1.0/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../reveal.js-3.1.0/plugin/notes/notes.js', async: true },
+					{src: '../reveal.js-3.1.0/plugin/math/math.js', async: true },		
+					]
+			});
+
+		</script>
+
+	</body>
+</html>
