@@ -63,8 +63,6 @@
 					<ul>
 						<li>Chapter 5: Python Data Analysis</li>
 						<ul>
-						<li>Writing .csv files with numpy and pandas (pg. 120)</li>
-						<li>Reading and writing to Excel with pandas (pg. 129)</li>
 						<li>Using REST web services and JSON (pg. 131)</li>
 						<li>Reading and writing JSON with pandas (pg. 132)</li>
 						<li>Parsing RSS and Atom feeds</li>
@@ -73,104 +71,7 @@
 				</section>
 			</section>	
 			
-			<section data-background="../images/background2.png">
-					<h2>CSV Data</h2>
-
-					<section>
-						<p>CSV = Comma separated values</p>
-					</section>
-
-					<section>
-						<p>Save to CSV using numpy</p>
-  					<pre><code class="python" data-trim contenteditable>
-
-import numpy as np
-import pandas as pd
-from IPython.display import display
-
-np.random.seed(42)
-
-test=np.random.randn(2,5)
-display(test)
-
-np.savetxt('np.csv', test, delimiter=',', header='one,two,three,four,five')				
-
-
-						</code></pre>
-					</section>
-
-
-						<section>
-						<p>Save to CSV using pandas</p>
-  					<pre><code class="python" data-trim contenteditable>
-
-df=pd.DataFrame(test)
-df.to_csv('np2.csv')
-
-						</code></pre>
-					</section>
-				</section>			
-
-	
-			<section data-background="../images/background2.png">
-					<h2>Excel Data</h2>
-
-
-				<section>
-						<p>Excel</p>
-						<ul>
-							  <li>Convenient to share</li>
-								<li>Can store multiple dataframes as sheets</li>
-						</ul>  
-					</section>
-
-					<section>
-						<p>Create another dataframe</p>
-						<pre><code class="python" data-trim contenteditable>
-
-test2=np.random.randn(2,5)
-df2=pd.DataFrame(test2)i
-
-						</code></pre>
-					</section>
-
-						<section>
-						<p>Save both dataframes to Excel</p>
-  					<pre><code class="python" data-trim contenteditable>
-
-writer = pd.ExcelWriter('np.xlsx')
-df.to_excel(writer, 'Data 0')
-df2.to_excel(writer, 'Data 1')
-writer.save()
-
-						</code></pre>
-					</section>
-			
-					<section>
-						<p>Read Excel</p>
-						<p>Remember-> Excel files have multiple sheets</p>
-  					<pre><code class="python" data-trim contenteditable>
-
-xl=pd.ExcelFile('../data/running/Grand_Prix_Post_Stockadeathontemp.xls')
-xl.sheet_names
-
-						</code></pre>
-					</section>
-			
-					<section>
-						<p>Extract a sheet as a DataFrame</p>
-  					<pre><code class="python" data-trim contenteditable>
-
-print type(xl)
-df_run=xl.parse('Male')
-print type(df_run)
-df_run.head()
-
-						</code></pre>
-					</section>
-				</section>			
-
-			
+		
 			
 			<section data-background="../images/background2.png">
 					<h2>Web API</h2>
@@ -204,8 +105,9 @@ df_run.head()
 					
 					<p>What is REST?</p>
 					<ul>
+						<li><a href="http://rest.elkstein.org/">REST Tutorial</a>
 						  <li>Representational State Transfer</li>
-							<li>Data is retrieved using URIs</li>
+							<li>Data is retrieved and sent using URIs</li>
 							<li>URI-> Uniform Resource Identifier</li>
 					</ul>  
 				</section>
@@ -217,15 +119,17 @@ df_run.head()
 					
 					<ul>
 						<li>GET - request data</li>
-						<li>POST - accept data</li>
+						<li>POST - create (send) data</li>
+						<li>PUT - create or update data</li>
+						<li>DELETE - remove data</li>
 					</ul>  
 				</section>
 
 		<section data-background="../images/background2.png">
 					<h2>REST web services</h2>
 				<section>
-					<h2>Example</h2>
-					<p>Enter this address in a browser</p>term
+					<h3>Example</h3>
+					<p>Enter this address in a browser</p>
 					<blockquote class="graybox">
 						http://maps.googleapis.com/maps/api/elevation/json?locations=42,73&sensor=false
 					</blockquote>
@@ -255,6 +159,7 @@ df_run.head()
 				<ul>
 					<li>We requested information using a URL</li>
 					<li>Information was returned in JSON format</li>
+					<li>Try Everest (27.98 N, 86.92 E)</li>
 				</ul>
 			</section>
 
@@ -308,58 +213,21 @@ print type(data['results][0])
 					</section>
 				
 
-			<section>
+				<section>
 						<p>Exercise - Find elevation of Everest</p>
   					<pre><code class="python" data-trim contenteditable>
 
 						</code></pre>
 					</section>
+	
+					<section>
+						<p>Exercise - FDA data</p>
+					<pre><code class="python" data-trim contenteditable>
+  					http://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:aspirin&count=patient.reaction.reactionmeddrapt.exact
+						</code></pre>
+					</section>
 				</section>
 
-
-
-			<section data-background="../images/background2.png">
-					<h2>HTML</h2>
-	
-			<section>
-				<p>HTML basics</p>
-				<ul>
-					<li>Hypertext Markup Language (HTML)</li>
-					<li>tags surrouded by brackets <html></li>
-					<li>HTML can be thought of as a form of data</li>
-					<li>Consists of attribute-value pairs</li>
-					<li>Scraping HTML - last resort</li>
-					<li>View code -> tools -> view source </li>
-				</ul>
-			</section>
-
-			<section>
-				<p>Simple html</p>
-  					<pre><code class="python" data-trim contenteditable>
-
-&lt;HTML&gt;
-&lt;HEAD&gt;
-&lt;TITLE&gt;A simple web site&lt;/TITLE&gt;
-&lt;/HEAD&gt;
- 
-&lt;BODY BGCOLOR=&quot;FFFFAA&quot;&gt;
-
-&lt;a href=&quot;http://www.bluejays.com&quot;&gt;Link Name&lt;/a&gt;
-is a link to my favorite site
- 
-&lt;H1&gt;This is a Header&lt;/H1&gt;
-&lt;H2&gt;This is a Medium Header&lt;/H2&gt;
-
-Send me mail at &lt;a href=&quot;mailto:bnorthan@gmail.com&quot;&gt; support@yourcompany.com&lt;/a&gt;.
-&lt;P&gt; This is a new paragraph!&lt;/p&gt;
-&lt;/BODY&lt;html&gt;
-
-&lt;/HTML&gt;
-
-						</code></pre>
-	
-
-			</section>
 
 
 	
