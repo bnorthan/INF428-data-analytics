@@ -62,12 +62,13 @@
 					<h4>Reference Material</h4>
 					<ul>
 						<li>Chapter 8: Python Data Analysis</li>
-						<li><a href="http://www.w3schools.com/sql/">SQL</a>
+						<li>Chapter 3: KNIME Beginner's luck</li>
+						<li><a href="http://www.w3schools.com/sql/">W3 Schools SQL Tutorial</a>
 					</ul>
 				</section>
 			</section>	
 
-				<section data-background="../images/background2.png">
+			<section data-background="../images/background2.png">
 					<h2>Relational Databases</h2>
 					<ul>
 					<li>Data organized in tables</li>
@@ -75,7 +76,7 @@
 					<li>Each column holds a type of data</li>
 					<li>Rows in one table can be linked to other tables (relations)</li>
 					</ul>
-					</section>
+			</section>
 
 			<section data-background="../images/background2.png">
 					<h2>SQL</h2>
@@ -91,14 +92,54 @@
 					</ul>
 					</section>
 
+		
 <section data-background="../images/background2.png">
-					<h2>SQLite</h2>
+				<h2>Example SQL Implementations</h2>
+
+				<ul>
+					<li><a href="https://en.wikipedia.org/wiki/MySQL">MySQL</a></li>
+					<li><a href="https://en.wikipedia.org/wiki/SQLite">SQLite</a></li>
+					<li><a href="https://en.wikipedia.org/wiki/PostgreSQL">PostgreSQL</a></li>
+				</ul>
+			</section>
+
+			<section data-background="../images/background2.png">
+				<h2>Using SQL in a website</h2>
+
+				<ul>
+					<li>A database program (MySQL, SQLLite, etc.)</li>
+					<li>Server side language (PHP, Python (Django, Flask)</li>
+					<li>Server side language talks to database with SQL</li>
+					<li>HTML/CSS used to show web pages in client (web browser)</li>
+				</ul>
+			</section>
+
+			</section>
+			
+			<section data-background="../images/background2.png">
+					<h2>SQLite (windows)</h2>
 					<ul>
-					<li>Lightweight and fee database</li>
+					<li>Lightweight and free database</li>
 					<li><a href="https://www.sqlite.org/download.html">Download</a></li>
 					<li>Download version with command line tools</li>
 					</ul>
-					</section>
+			</section>
+
+			<section data-background="../images/background2.png">
+					<h2>SQLite (windows)</h2>
+					<ul>
+					<li>Copy into 'program files' directory</li>
+					<ul><li>ie 'C:\Program Files (x86)\'</li></ul>
+					<li>Add location to <a src=http://www.computerhope.com/issues/ch000549.htm>System Path</a></li>
+					<li>In Windows 10</li>
+					<ul>
+						<li>Go to start menu</li>
+						<li>Search for path</li>
+						<li>A dialog will pop up select 'environment variables'</li>
+						<li>Highlight 'PATH' and press 'edit'</li>
+					</ul>
+					</ul>
+			</section>
 
 
 
@@ -106,16 +147,62 @@
 					<h2>sqlite</h2>
 
 							<section>
-						<p>Basic sqlite example</p>
-  					<pre><code class="python" data-trim contenteditable>
+						<h3>IPython notebook basic sqlite examples</h3>
+						<ul>
+
+						<li>'...\2016 Q1 Spring\notebooks\Databases\sql.ipynb'</li>
+						<li>'...\2016 Q1 Spring\notebooks\Databases\bball_sql.ipynb'</li>
+						<li><a href="http://www.w3schools.com/sql/">based on W3 Schools SQL Tutorial</a></li>
+						</ul>
+				<pre><code class="python" data-trim contenteditable>
 import sqlite3
 
-with sqlite3.connect(":memory:") as con:
+with sqlite3.connect("mytest.db") as con:
     c=con.cursor()					
 					
 						</code></pre>
 					</section>
 
+		</section>
+i
+<section data-background="../images/background2.png">
+					<h2>SQL and databases in KNIME</h2>
+
+							<section>
+						<ul>
+
+						<li>see 'Databases' workflow in KNIME google drive</li>
+						<li>Need
+							<ul>
+								<li>Connector (MySQL, SQLite)</li>
+								<li>Database reader</li>
+								<li>Database writer</li>
+							</ul>
+						</li>
+						</ul>
+		</section>
+
+
+			<section data-background="../images/background2.png">
+		<h3>Common SQL Commands</h3>
+		<ul>
+		<li>SELECT - extracts data from a database</li>
+		<li>UPDATE - updates data in a database</li>
+		<li>DELETE - deletes data from a database</li>
+		<li>INSERT INTO - inserts new data into a database</li>
+		<li>CREATE DATABASE - creates a new database</li>
+		</ul>
+		</section>
+			<section data-background="../images/background2.png">
+		<h3>Common SQL Commands (continued)</h3>
+		<ul>
+		<li>ALTER DATABASE - modifies a database</li>
+		<li>CREATE TABLE - creates a new table</li>
+		<li>ALTER TABLE - modifies a table</li>
+		<li>DROP TABLE - deletes a table</li>
+		<li>CREATE INDEX - creates an index (search key)</li>
+		<li>DROP INDEX - deletes an index</li>
+		</ul>
 		</section>
 
 <section data-background="../images/background2.png">
