@@ -49,7 +49,6 @@
 				<section data-background="../images/background2.png">
 					<h2>INF 428: Database Review</h2>
 		
-					<section>
 					<p>
 						<small>
 							<a href="https://github.com/bnorthan">Brian Northan</a>
@@ -58,7 +57,7 @@
 					</p>
 				</section>
 				
-					<section>
+				<section data-background="../images/background2.png">
 					<h4>Reference Material</h4>
 					<ul>
 						<li>Chapter 8: Python Data Analysis</li>
@@ -66,7 +65,6 @@
 						<li><a href="http://www.w3schools.com/sql/">W3 Schools SQL Tutorial</a>
 					</ul>
 				</section>
-			</section>	
 
 			<section data-background="../images/background2.png">
 					<h2>Relational Databases</h2>
@@ -144,9 +142,6 @@
 
 
 			<section data-background="../images/background2.png">
-					<h2>sqlite</h2>
-
-							<section>
 						<h3>IPython notebook basic sqlite examples</h3>
 						<ul>
 
@@ -161,17 +156,15 @@ with sqlite3.connect("mytest.db") as con:
     c=con.cursor()					
 					
 						</code></pre>
-					</section>
 
 		</section>
-i
+
 <section data-background="../images/background2.png">
 					<h2>SQL and databases in KNIME</h2>
 
-							<section>
 						<ul>
 
-						<li>see 'Databases' workflow in KNIME google drive</li>
+						<li>See 'Databases' workflow in KNIME google drive</li>
 						<li>Need
 							<ul>
 								<li>Connector (MySQL, SQLite)</li>
@@ -214,8 +207,46 @@ i
 					</ul>
 					</section>
 
+<section data-background="../images/background2.png">
+					<h2>Or just use pandas...</h2>
+					
+			<pre><code class="python" data-trim contenteditable>
+import sqlite3 
+import pandas as pd
 
+conn=sqlite3.connect("../../data/databases/mytest.db")
+df=pd.read_sql("select * from nba",conn)
+print df.shape
+df.head()
+			</code></pre>
+
+
+					</section>
+
+
+<section data-background="../images/background2.png">
+	<h3>Assignment 7 Changing face of NBA</h3>
+	<ul>
+		<li>For every player, for every year since 1990 put the players total stats in a database</li>
+		<li><a href="http://www.basketball-reference.com/leagues/NBA_1990_totals.html">Example data from 1990</a></li>
+		<li>There is a KNIME work flow (databases) set up to put 1 years worth of data into the data base</li>
+		<li>You may have to load the data into a spread sheet first and resave it, in order for it to load into KNIME</li>
+		<li>NOTE - you have to change the 'Java Snippet - Add year' node to append the proper year to the data</li>
 	
+	</ul>
+</section>	
+<section data-background="../images/background2.png">
+	<h3>Assignment 7 Changing face of NBA</h3>
+	<ul>
+		<li>NOTE - you have to change the name of some columns (Column Rename)</li>
+		<li>Once you have the data in a database</li>
+		<ul>
+			<li>Plot the leader in M3P (Made 3 pointers) and T3P (Total 3 pointers) for each year</li>
+			<li>Plot the sum of made 3 pointers and total 3 pointers for each year</li>
+		</ul>
+	
+	</ul>
+</section>	
 			</div>
 
 		</div>
