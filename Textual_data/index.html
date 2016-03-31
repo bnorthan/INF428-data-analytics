@@ -49,7 +49,6 @@
 				<section data-background="../images/background2.png">
 					<h2>INF 428: Textual Data</h2>
 		
-					<section>
 					<p>
 						<small>
 							<a href="https://github.com/bnorthan">Brian Northan</a>
@@ -57,19 +56,18 @@
 						</small>
 					</p>
 				</section>
-				
-					<section>
-					<h4>Reference Material</h4>
+			
+			
+				<section data-background="../images/background2.png">
+					<h3>Reference Material</h3>
 					<ul>
 						<li>Chapter 9: Python Data Analysis</li>
 					</ul>
 				</section>
-			</section>	
 			
 			<section data-background="../images/background2.png">
-					<h2>Textual Data</h2>
+					<h3>Textual Data</h3>
 
-						<section>
 						<ul>
 							<li>Plain text is the most common form of data</li>
 							<li>NLTK -> Natural Language Toolkit</li>
@@ -77,8 +75,8 @@
 						</ul>
 					</section>
 
-				<section>
-					<h4> Common Concepts</h4>	
+			<section data-background="../images/background2.png">
+					<h3> Common Concepts</h3>	
 					<ul>
 						<li>Corpus -> collection of written texts</li>
 						<li>Stopwords -> low information words</li>
@@ -86,26 +84,40 @@
 					</ul>
 					</section>
 
-					<section>
-						<p>Install NLTK --> pip install nltk</p>
+			<section data-background="../images/background2.png">
+						<ul>
+						<li>Install NLTK --> conda install nltk</li>
+						<li>Download nltk corpus</li>
+						</ul>
   					<pre><code class="python" data-trim contenteditable>
 import nltk
+nltk.download()
 						</code></pre>
 					</section>
 
 		
-					<section>
-					<h4> Bag of words model</h4>	
+				<section data-background="../images/background2.png">
+					<h3> Bag of words model</h3>	
 					<ul>
 						<li>Create collection of words in document</li>
 						<li>Count the number of times each word appears</li>
 						<li>Use word counts for analsyis (ie detect spam in e-mail)</li>	
 					</ul>
-					</section>
+				</section>
 
-
-		</section>
-
+				<section data-background="../images/background2.png">
+					<h3>Preprocessing</h3>	
+					<ul>
+						<li>Filter out very short words and single letter (a, I)</li>
+						<li>Filter out stopwords</li>
+						<ul>
+							<li>common words with low information</li>
+							<li>ie the, all, just</li>
+						</ul>
+						<li>Filter out names</li>
+						<li>Filter out numbers</li>	
+					</ul>
+				</section>
 
 	
 			</div>
