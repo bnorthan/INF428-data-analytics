@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Machine Learning</title>
+
+		<meta name="description" content "Machine Learning">
+		<meta name="author" content="Brian Northan">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="../reveal.js-3.1.0/css/reveal.css">
+		<link rel="stylesheet" href="../reveal.js-3.1.0/css/theme/beige.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="../reveal.js-3.1.0/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js-3.1.0/css/print/pdf.css' : '../reveal.js-3.1.0/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<script type="text/javascript"
+            		src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    		</script>
+
+		<!--[if lt IE 9]>
+		<script src="../reveal.js-3.1.0/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+		
+				<section data-background="../images/background2.png">
+					<h2>INF 428: Machine Learning</h2>
+		
+					<p>
+						<small>
+							<a href="https://github.com/bnorthan">Brian Northan</a>
+							<a href="http://www.truenorth-ia.com/">True North Intelligent Algorithms LLC</a>
+						</small>
+					</p>
+				</section>
+			
+			
+				<section data-background="../images/background2.png">
+					<h3>Reference Material</h3>
+					<ul>
+						<li>Chapter 10: Python Data Analysis</li>
+						<li>Chapter 4: KNIME Beginner's Luck</li>
+					</ul>
+				</section>
+			
+			<section data-background="../images/background2.png">
+					<h3>What is Machine Learning</h3>
+
+						<ul>
+							<li>Automated pattern analysis</li>
+							<li>Learning models from examples</li>
+							<li>Using models to make classifications or predictions</li>
+						</ul>
+					</section>
+
+			<section data-background="../images/background2.png">
+					<h3>Examples</h3>	
+					<ul>
+						<li>Search Engines</li>
+						<ul>
+							<li>Every time you click a link the search engine learns</li>
+						</ul>
+						<li>Credit risk analysis</li>
+						<li>Face recognition</li>	
+					</ul>
+			</section>	
+			
+			<section data-background="../images/background2.png">
+				<h3>Key Terminology</h3>
+				<ul>
+				<li>Features</li>
+				<li>Feature Vector</li>
+				<li>Classification</li>
+				<li>Regression</li>
+				<li>Clustering</li>
+				</ul>
+			</section>
+
+		
+		<section data-background="../images/background2.png">
+				<h3>Feature</h3>
+
+				<ul>
+					<li>Features are attributes</li>
+					<li>Numerical
+					<ul>
+						<li>Weight, age, wins, runs scored</li>
+					</ul></li>
+					<li>Binary
+					<ul>
+					<li>Yes/No (1 or 0)</li>
+					<li>Male/Female</li>
+					</ul>
+					<li>Enumeration/Categorical
+					<ul><li>Color, City, Education Level</li></ul>
+
+				</ul>
+			</section>
+	
+	<section data-background="../images/background2.png">
+				<h3>Features Vector</h3>
+
+				<ul>
+					<li>Array of Features</li>
+					<li>Each feature converted to numerical value</li>
+			<table border="1">
+			<tr>
+			<td>Age</td>
+			<td>Gender</td>
+			<td>Education</td>
+			</tr>
+			<tr>
+			<td>32</td>
+			<td>M</td>
+			<td>High School</td>
+			</tr>
+			<tr>
+			<td>27</td>
+			<td>F</td>
+			<td>PhD</td>
+			</tr>
+			</table>
+				</ul>
+			</section>
+			
+			<section data-background="../images/background2.png">
+				<h3>Features Vector</h3>
+
+				<ul>
+					<li>Array of Features</li>
+					<li>Each feature converted to numerical value</li>
+			<table border="1">
+			<tr>
+			<td>Age</td>
+			<td>Gender</td>
+			<td>Education</td>
+			</tr>
+			<tr>
+			<td>32</td>
+			<td>0</td>
+			<td>1</td>
+			</tr>
+			<tr>
+			<td>27</td>
+			<td>1</td>
+			<td>4</td>
+			</tr>
+			</table>
+				</ul>
+			</section>
+
+			<section data-background="../images/background2.png">
+				<img src="./tweets_images.png">
+			</section>
+
+			<section data-background="../images/background2.png">
+				<img src="./tweets_vector.png">
+			</section>
+
+			<section data-background="../images/background2.png">
+				<img src="./letters_images.png">
+			</section>
+
+			<section data-background="../images/background2.png">
+				<img src="./letters_vector.png">
+			</section>
+
+			<section data-background="../images/background2.png">
+					<h3>Classification</h3>	
+					<ul>
+					<li>Identify a target variable
+					<ul>
+						<li>Type of bird</li>
+						<li>Credit risk category (high, low)</li>
+						<li>disease state</li>
+						<li>Filter out stopwords</li>
+					</ul></li>
+
+					<li>Target variable is called a class</li>
+                                        <li>Steps
+					<ul>
+							<li>Train algorithm (give it known examples)</li>
+							<li>Apply to unknown (new) examples</li>
+					</ul>
+					</ul>
+				</section>
+
+		
+				<section data-background="../images/background2.png">
+				<h3>Regression</h3>
+				<ul>
+				<li>Prediction of a numerical value</li>
+				<li>Linear regression
+				<ul>
+				<li>y: a output</li>
+				<li>x: one or more inputs</li>
+				<li>y=ax, or y=a1*x1+a2*x2+a3*x3</li>
+			</section>
+
+			<section data-background="../images/background2.png">
+				<h3>Clustering</h3>
+				<ul>
+				<li>No Target Value</li>
+				<li>Divide Data Into Groups</li>
+				<li>Unsupervised Learning</li>
+				</ul>
+			</section>
+
+
+			<section data-background="../images/background2.png">
+				<h3>Example KNIME</h3>
+				<p>Loan Risk</p>
+			</section>
+
+				<section data-background="../images/background2.png">
+				<h3>Machine Learning Steps</h3>
+			<ul>
+			<li>Collect Data
+				
+				<ul>
+				<li>Scrape a web site</li>
+				<li>Use an API</li>
+				<li>create a survey</li>
+				<li>built a device (weather, blood glucose)</li>
+				</ul></li>
+				
+				<li>Prepare Input data
+				<ul>
+				<li>Fix errors</li>
+				<li>Deal with missing data</li>
+				</ul></li>
+				</ul>
+			</section>
+			
+			<section data-background="../images/background2.png">
+				<h3>Machine Learning Steps</h3>
+			<ul>
+			<li>Analyze data
+				
+				<ul>
+				<li>Do you recognize patterns</li>
+						</ul></li>
+				
+					<li>Train algorithm
+				<ul>
+				<li>This is machine learning</li>
+				<li>Apply algorithm to known values so it can learn</li>
+				</ul></li>
+		<li>Test algorithm
+				<ul>
+				<li>Apply algorithm to known values to test performance</li>
+				</ul></li>
+				</ul>
+			</section>
+	
+				<section data-background="../images/background2.png">
+				<h3>Machine Learning Steps</h3>
+			<ul>
+			<li>Apply Algorithm</li>
+			</ul>
+			</section>
+			
+			</div>
+
+		</div>
+
+		<script src="../reveal.js-3.1.0/lib/js/head.min.js"></script>
+		<script src="../reveal.js-3.1.0/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: false,
+
+				transition: 'none', // none/fade/slide/convex/concave/zoom
+				
+				math: {
+        				mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
+        				config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+   					 },
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: '../reveal.js-3.1.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../reveal.js-3.1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../reveal.js-3.1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../reveal.js-3.1.0/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../reveal.js-3.1.0/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../reveal.js-3.1.0/plugin/notes/notes.js', async: true },
+					{src: '../reveal.js-3.1.0/plugin/math/math.js', async: true },		
+					]
+			});
+
+		</script>
+
+	</body>
+</html>
