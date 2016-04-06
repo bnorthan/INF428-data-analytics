@@ -1,0 +1,25 @@
+Bureau of Justice Statistics,,,
+Filename: fv9311at20.csv,,,
+"Appendix table 20. Numbers and standard errors for figure 11: Nonfatal firearm injuries, 2001–2011",,,
+"Report title: Firearm Violence, 1993-2011",,,
+"Data source: Consumer Product Safety Commission, National Electronic Injury Surveillance System All Injury Program (NEISS-AIP), 2001–2011, accessed from the National Center for Injury Prevention and Control, CDC.",,,
+Authors: Michael Planty and Jennifer Truman,,,
+Refer questions to: askbjs@usdoj.gov 202-307-0765,,,
+Date of version: 05/07/13,,,
+,,,
+"Appendix table 20. Numbers and standard errors for figure 11: Nonfatal firearm injuries, 2001–2011",,,
+,,,
+Year,Number,,Standard error
+2001,"41,044",,"10,287"
+2002,"37,321",,"9,282"
+2003,"42,505",,"11,558"
+2004,"43,592",,"11,764"
+2005,"50,320",,"14,431"
+2006,"52,748",,"15,027"
+2007,"48,676", !,"15,139"
+2008,"56,626",,"16,648"
+2009,"44,466",,"11,767"
+2010,"53,738",,"15,769"
+2011,"55,544",,"15,671"
+"! Interpret with caution. Estimate based on fewer than 20 NEISS cases (based on unweighted data), national estimates less than 1,200 (based on weighted data), or the coefficient of variation (CV) of the estimate greater than 30%.   ",,,
+"Source: Consumer Product Safety Commission, National Electronic Injury Surveillance System All Injury Program (NEISS-AIP), 2001–2011, accessed from the National Center for Injury Prevention and Control, CDC.",,,

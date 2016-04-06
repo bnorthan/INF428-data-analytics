@@ -1,0 +1,33 @@
+Bureau of Justice Statistics,,,,,,,,
+Filename: fv9311at15.csv,,,,,,,,
+"Appendix table 15. Rates and standard errors for figure 10: Nonfatal firearm violence, by urban-rural location, 1994–2011",,,,,,,,
+"Report title: Firearm Violence, 1993-2011",,,,,,,,
+"Data source: National Crime Victimization Survey, 1993-2011",,,,,,,,
+Authors: Michael Planty and Jennifer Truman,,,,,,,,
+Refer questions to: askbjs@usdoj.gov 202-307-0765,,,,,,,,
+Date of version: 05/07/13,,,,,,,,
+,,,,,,,,
+ ,,,,,,,,
+"Appendix table 15. Rates and standard errors for figure 10: Nonfatal firearm violence, by urban-rural location, 1994–2011",,,,,,,,
+,Urban,,,Suburban,,,Rural,
+Year,Rate*,Standard error,,Rate*,Standard error,,Rate*,Standard error
+1994,10.6,0.7,,6.3,0.4,,5.2,0.5
+1995,10.1,0.6,,5.5,0.4,,3.6,0.4
+1996,8.4,0.5,,4.4,0.3,,3.1,0.4
+1997,7.3,0.5,,3.9,0.3,,3.6,0.4
+1998,6.2,0.5,,3.8,0.3,,2.3,0.3
+1999,5.3,0.5,,3.1,0.3,,1,0.2
+2000,4.8,0.5,,2.3,0.2,,1,0.2
+2001,4.4,0.4,,2,0.2,,1.4,0.3
+2002,4.4,0.4,,1.8,0.2,,1.1,0.2
+2003,3.7,0.4,,1.7,0.2,,0.9,0.2
+2004,3,0.3,,1.7,0.2,,1,0.2
+2005,3.4,0.4,,1.5,0.2,,1.1,0.3
+2006,3.3,0.4,,1.8,0.2,,1.9,0.4
+2007,2.6,0.3,,2.3,0.2,,1.9,0.3
+2008,2.2,0.3,,1.8,0.2,,1.2,0.3
+2009,2.6,0.3,,1.1,0.2,,0.9,0.2
+2010,2.8,0.3,,1.2,0.2,,0.7,0.2
+2011,2.5,0.3,,1.4,0.2,,1.2,0.2
+"*Rate per 1,000 persons age 12 or older.",,,,,,,,
+"Source: Bureau of Justice Statistics, National Crime Victimization Survey, 1993–2011.",,,,,,,,

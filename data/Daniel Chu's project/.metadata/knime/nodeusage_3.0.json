@@ -1,0 +1,137 @@
+
+{
+    "version":"3.1.1.v201601291159",
+    "created":"2016-03-01 16:36",
+    "nodestats":{
+        "nodes":[
+            {
+                "id":"org.knime.base.node.io.filereader.FileReaderNodeFactory#File Reader",
+                "nrexecs":33,
+                "exectime":10913,
+                "nrcreated":7,
+                "successor":"org.knime.base.node.viz.plotter.box.BoxPlotNodeFactory#Box Plot"
+            },
+            {
+                "id":"org.knime.base.node.viz.table.TableNodeFactory#Interactive Table",
+                "nrexecs":4,
+                "exectime":983,
+                "nrcreated":3,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.viz.plotter.scatter.ScatterPlotterNodeFactory#Scatter Plot",
+                "nrexecs":6,
+                "exectime":1805,
+                "nrcreated":2,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.stats.viz.extended.ExtendedStatisticsNodeFactory#Statistics",
+                "nrexecs":2,
+                "exectime":10896,
+                "nrcreated":2,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.viz.pie.node.interactive.InteractivePieNodeFactory#Pie chart (interactive)",
+                "nrexecs":10,
+                "exectime":1993,
+                "nrcreated":2,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.viz.histogram.node.HistogramNodeFactory#Histogram (interactive)",
+                "nrexecs":17,
+                "exectime":4385,
+                "nrcreated":1,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.preproc.groupby.GroupByNodeFactory#GroupBy",
+                "nrexecs":2,
+                "exectime":1068,
+                "nrcreated":1,
+                "successor":"org.knime.base.node.viz.histogram.node.HistogramNodeFactory#Histogram (interactive)"
+            },
+            {
+                "id":"org.knime.base.node.viz.pie.node.fixed.FixedPieNodeFactory#Pie chart",
+                "nrexecs":28,
+                "exectime":9291,
+                "nrcreated":1,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.viz.property.color.ColorManager2NodeFactory#Color Manager",
+                "nrexecs":18,
+                "exectime":2186,
+                "nrcreated":3,
+                "successor":"org.knime.base.node.viz.plotter.scattermatrix.ScatterMatrixNodeFactory#Scatter Matrix"
+            },
+            {
+                "id":"org.knime.base.node.viz.property.color.ColorAppender2NodeFactory#Color Appender",
+                "nrexecs":0,
+                "exectime":0,
+                "nrcreated":1,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.preproc.joiner.Joiner2NodeFactory#Joiner",
+                "nrexecs":1,
+                "exectime":4052,
+                "nrcreated":0,
+                "successor":"org.knime.ext.osm.node.mapview.OsmMapViewNodeFactory#OSM Map View"
+            },
+            {
+                "id":"org.knime.base.node.viz.plotter.box.BoxPlotNodeFactory#Box Plot",
+                "nrexecs":5,
+                "exectime":1846,
+                "nrcreated":3,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.viz.condbox.ConditionalBoxPlotNodeFactory#Conditional Box Plot",
+                "nrexecs":3,
+                "exectime":321,
+                "nrcreated":2,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.viz.plotter.scattermatrix.ScatterMatrixNodeFactory#Scatter Matrix",
+                "nrexecs":3,
+                "exectime":589,
+                "nrcreated":1,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.io.csvwriter.CSVWriterNodeFactory#CSV Writer",
+                "nrexecs":0,
+                "exectime":0,
+                "nrcreated":1,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.preproc.rename.RenameNodeFactory#Column Rename",
+                "nrexecs":0,
+                "exectime":0,
+                "nrcreated":1,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.ext.osm.node.mapview.OsmMapViewNodeFactory#OSM Map View",
+                "nrexecs":1,
+                "exectime":594,
+                "nrcreated":0,
+                "successor":"n/a"
+            }
+        ],
+        "metaNodes":{
+        },
+        "wrappedNodes":{
+        }
+    },
+    "uptime":17173098,
+    "launches":8,
+    "timeSinceLastStart":43223835,
+    "crashes":0,
+    "properlyShutDown":true
+}

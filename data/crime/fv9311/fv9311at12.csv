@@ -1,0 +1,32 @@
+Bureau of Justice Statistics,,,,,
+Filename: fv9311at12.csv,,,,,
+"Appendix table 12. Standard errors for table 4: Nonfatal firearm violence, by age, 1994–2011",,,,,
+"Report title: Firearm Violence, 1993-2011",,,,,
+"Data source: National Crime Victimization Survey, 1993-2011",,,,,
+Authors: Michael Planty and Jennifer Truman,,,,,
+Refer questions to: askbjs@usdoj.gov 202-307-0765,,,,,
+Date of version: 05/07/13,,,,,
+,,,,,
+"Appendix table 12. Standard errors for table 4: Nonfatal firearm violence, by age, 1994–2011",,,,,
+Year, 12-17,18-24,25-34,35-49,50 or older
+1994,1.2,1.4,0.8,0.6,0.2
+1995,0.9,1.2,0.6,0.4,0.2
+1996,0.8,1,0.6,0.4,0.2
+1997,0.8,1.1,0.6,0.4,0.2
+1998,0.8,1.1,0.5,0.4,0.2
+1999,0.7,1,0.6,0.3,0.2
+2000,0.6,0.8,0.5,0.3,0.2
+2001,0.5,0.8,0.4,0.3,0.2
+2002,0.5,0.8,0.4,0.3,0.1
+2003,0.5,0.7,0.4,0.2,0.1
+2004,0.4,0.6,0.4,0.3,0.2
+2005,0.4,0.7,0.5,0.3,0.2
+2006,0.5,0.8,0.5,0.3,0.2
+2007,0.7,0.7,0.5,0.3,0.2
+2008,0.6,0.5,0.4,0.3,0.1
+2009,0.3,0.6,0.4,0.3,0.1
+2010,0.2,0.8,0.4,0.2,0.1
+2011,0.3,0.6,0.3,0.2,0.1
+"*Rate per 1,000 persons age 12 or older.",,,,,
+"!Interpret with caution. Estimate based on 10 or fewer sample cases, or coefficient of variation is greater than 50%.",,,,,
+"Source: Bureau of Justice Statistics, National Crime Victimization Survey, 1993–2011.",,,,,

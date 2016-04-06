@@ -1,0 +1,8 @@
+file:/C:/Users/dchu2_000/Google%20Drive/2016%20Q1%20Spring/data/Daniel%20Chu's%20project/teams_GSW_2016_totals.csv
+file:/C:/Users/dchu2_000/Google%20Drive/2016%20Q1%20Spring/data/Daniel%20Chu's%20project/james_curry_comparison_2016.csv
+file:/C:/Users/dchu2_000/Google%20Drive/2016%20Q1%20Spring/data/Daniel%20Chu's%20project/shooting_leaders.csv
+file:/C:/Users/dchu2_000/Google%20Drive/2016%20Q1%20Spring/data/Daniel%20Chu's%20project/leagues_NBA_2015_totals_totals.csv
+file:/C:/Users/dchu2_000/Google%20Drive/2016%20Q1%20Spring/data/Daniel%20Chu's%20project/leagues_NBA_2016_shooting.csv
+file:/C:/Users/dchu2_000/Google%20Drive/2016%20Q1%20Spring/data/Daniel%20Chu's%20project/nba_team_stats_2016.csv
+file:/C:/Users/dchu2_000/Google%20Drive/2016%20Q1%20Spring/data/Joel%20Kurian/zipcode.csv
+file:/C:/Users/dchu2_000/Google%20Drive/2016%20Q1%20Spring/data/Daniel%20Chu's%20project/teamlocations.csv

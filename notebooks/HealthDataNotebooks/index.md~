@@ -1,0 +1,19 @@
+---
+layout: lesson
+root: ../..
+title: Datavisualization with Python and matplotlib
+---
+This lesson assumes that you already understand basic programming concepts
+and are either familiar with,
+or can quickly master,
+the basic elements of Python.
+
+<div class="toc" markdown="1">
+
+1.  [Health Indicators Scatterplot](01-indicators.html)
+2.  [Hospital Infections](02-infections.html)
+3.  [FDA data](03-fda-part1.html)
+4.  [FDA data part 2](04-fda-part2.html)
+5.  [Sparcs](05-sparcs.html)
+
+</div>
