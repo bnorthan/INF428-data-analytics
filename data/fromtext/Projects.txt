@@ -1,0 +1,133 @@
+name,color,ranking,money assigned (1000),money used (1000),reference year, Quarter
+Sahara, green,1,365,420,2009, Q1
+Mojave, black,19,520,510, 2009, Q1
+Kalahari,pink,7, 260,252, 2009, Q1
+Blue,blue,2,400,410, 2009, Q1
+White,white,6, 300,279, 2009, Q1
+Gobi,yellow,5,435,435, 2009, Q1
+Kara Kum,brown,3,379,386, 2009, Q1
+La Guajira,silver,4,412,422,2009, Q1
+Patagonia,purple,10, 453,453, 2009, Q1
+Sechura,gold,9,985,1000, 2009, Q1
+Tanami, gray,8,0,5, 2009, Q1
+Sahara,  green,1,319,320,2008, Q1
+Mojave,  black,19,500,500, 2008, Q1
+Kalahari,pink,7, 200,192, 2008, Q1
+Blue,blue,2,343,303, 2008, Q1
+White,white,6, 248,215, 2008, Q1
+Gobi,yellow,5,356,327, 2008, Q1
+Kara Kum,brown,3,222,248, 2008, Q1
+La Guajira,silver,4,351,412,2008, Q1
+Patagonia,purple,10, 416,413, 2008, Q1
+Sechura,gold,9,850,900, 2008, Q1
+Tanami, gray,8,0,0, 2008, Q1
+Sahara,  green,1,243,299,2007, Q1
+Mojave,  black, 19, 450,500, 2007, Q1
+Kalahari,pink,7, 210,292, 2007, Q1
+Blue,blue,2,340,325, 2007, Q1
+White,white,6, 215,215, 2007, Q1
+Gobi,yellow,5,320,307, 2007, Q1
+Kara Kum,brown,3,200,200, 2007, Q1
+La Guajira,silver,4,255,300,2007, Q1
+Patagonia,purple,10, 216,333, 2007, Q1
+Sechura,gold,9,800,900, 2007, Q1
+Tanami, gray,8,0,0, 2007, Q1
+Sahara, green,1,365,420,2009, Q2
+White,white,6,520,510, 2009, Q2
+Kalahari,pink,7, 260,252, 2009, Q2
+Blue,blue,2,400,410, 2009, Q2
+Mojave, black,19, 300,279, 2009, Q2
+Gobi,yellow,5,435,435, 2009, Q2
+Kara Kum,brown,3,379,386, 2009, Q2
+La Guajira,silver,4,412,422,2009, Q2
+Tanami, gray,8, 453,453, 2009, Q2
+Sechura,gold,9,985,1000, 2009, Q2
+Patagonia,purple,10, 0,5, 2009, Q2
+Sahara,  green,1,319,320,2008, Q2
+Mojave,  black,19,500,500, 2008, Q2
+Kalahari,pink,7, 200,192, 2008, Q2
+Blue,blue,2,343,303, 2008, Q2
+White,white,6, 248,215, 2008, Q2
+Gobi,yellow,5,356,327, 2008, Q2
+Kara Kum,brown,3,222,248, 2008, Q2
+La Guajira,silver,4,351,412,2008, Q2
+Patagonia,purple,10, 416,413, 2008, Q2
+Sechura,gold,9,850,900, 2008, Q2
+Tanami, gray,8,0,0, 2008, Q2
+Gobi,yellow,5,243,299,2007, Q2
+Mojave,  black, 19, 450,500, 2007, Q2
+Kalahari,pink,7, 210,292, 2007, Q2
+Blue,blue,2,340,325, 2007, Q2
+White,white,6, 215,215, 2007, Q2
+Sahara,  green,1,320,307, 2007, Q2
+Kara Kum,brown,3,200,200, 2007, Q2
+La Guajira,silver,4,255,300,2007, Q2
+Patagonia,purple,10, 216,333, 2007, Q2
+Sechura,gold,9,800,900, 2007, Q2
+Tanami, gray,8,0,0, 2007, Q2
+Blue,blue,2,365,420,2009, Q3
+Mojave, black,19,520,510, 2009, Q3
+La Guajira,silver,4, 260,252, 2009, Q3
+Sahara, green,1,400,410, 2009, Q3
+White,white,6, 300,279, 2009, Q3
+Gobi,yellow,5,435,435, 2009, Q3
+Kara Kum,brown,3,379,386, 2009, Q3
+Kalahari,pink,7,412,422,2009, Q3
+Patagonia,purple,10, 453,453, 2009, Q3
+Sechura,gold,9,985,1000, 2009, Q3
+Tanami, gray,8,0,5, 2009, Q3
+Sahara,  green,1,319,320,2008, Q3
+Mojave,  black,19,500,500, 2008, Q3
+Kalahari,pink,7, 200,192, 2008, Q3
+White,white,6,343,303, 2008, Q3
+Blue,blue,2, 248,215, 2008, Q3
+Gobi,yellow,5,356,327, 2008, Q3
+Kara Kum,brown,3,222,248, 2008, Q3
+La Guajira,silver,4,351,412,2008, Q3
+Patagonia,purple,10, 416,413, 2008, Q3
+Sechura,gold,9,850,900, 2008, Q3
+Tanami, gray,8,0,0, 2008, Q3
+Tanami, gray,8,243,299,2007, Q3
+Mojave,  black, 19, 450,500, 2007, Q3
+Kalahari,pink,7, 210,292, 2007, Q3
+Blue,blue,2,340,325, 2007, Q3
+White,white,6, 215,215, 2007, Q3
+Gobi,yellow,5,320,307, 2007, Q3
+Kara Kum,brown,3,200,200, 2007, Q3
+La Guajira,silver,4,255,300,2007, Q3
+Patagonia,purple,10, 216,333, 2007, Q3
+Sechura,gold,9,800,900, 2007, Q3
+Sahara,  green,1,0,0, 2007, Q3
+Sahara, green,1,365,420,2009, Q4
+Mojave, black,19,520,510, 2009, Q4
+Kalahari,pink,7, 260,252, 2009, Q4
+Blue,blue,2,400,410, 2009, Q4
+White,white,6, 300,279, 2009, Q4
+Gobi,yellow,5,435,435, 2009, Q4
+Kara Kum,brown,3,379,386, 2009, Q4
+La Guajira,silver,4,412,422,2009, Q4
+Patagonia,purple,10, 453,453, 2009, Q4
+Sechura,gold,9,985,1000, 2009, Q4
+Tanami, gray,8,0,5, 2009, Q4
+Mojave,  black,19,319,320,2008, Q4
+Sahara,  green,1,500,500, 2008, Q4
+Kalahari,pink,7, 200,192, 2008, Q4
+Blue,blue,2,343,303, 2008, Q4
+White,white,6, 248,215, 2008, Q4
+Gobi,yellow,5,356,327, 2008, Q4
+Kara Kum,brown,3,222,248, 2008, Q4
+La Guajira,silver,4,351,412,2008, Q4
+Sechura,gold,9, 416,413, 2008, Q4
+Patagonia,purple,10,850,900, 2008, Q4
+Tanami, gray,8,0,0, 2008, Q4
+Sahara,  green,1,243,299,2007, Q4
+Mojave,  black, 19, 450,500, 2007, Q4
+Tanami, gray,8, 210,292, 2007, Q4
+Blue,blue,2,340,325, 2007, Q4
+White,white,6, 215,215, 2007, Q4
+Gobi,yellow,5,320,307, 2007, Q4
+Kara Kum,brown,3,200,200, 2007, Q4
+La Guajira,silver,4,255,300,2007, Q4
+Patagonia,purple,10, 216,333, 2007, Q4
+Sechura,gold,9,800,900, 2007, Q4
+Kalahari,pink,7,0,0, 2007, Q4

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<favoritenodes>
+<personals/>
+<frequents>
+<favorite frequency="2" nodeid="org.knime.base.node.stats.viz.extended.ExtendedStatisticsNodeFactory"/>
+</frequents>
+<lastused>
+<favorite nodeid="org.knime.base.node.stats.viz.extended.ExtendedStatisticsNodeFactory"/>
+</lastused>
+</favoritenodes>

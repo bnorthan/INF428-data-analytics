@@ -1,0 +1,25 @@
+Bureau of Justice Statistics,,,,,,,,
+Filename: fv9311t10.csv,,,,,,,,
+"Table 10. Nonfatal firearm and nonfirearm violence reported and not reported to police, 2007–2011",,,,,,,,
+"Report title: Firearm Violence, 1993-2011",,,,,,,,
+"Data source: National Crime Victimization Survey, 2007-2011",,,,,,,,
+Authors: Michael Planty and Jennifer Truman,,,,,,,,
+Refer questions to: askbjs@usdoj.gov 202-307-0765,,,,,,,,
+Date of version: 05/07/13,,,,,,,,
+,,,,,,,,
+"Table 10. Nonfatal firearm and nonfirearm violence reported and not reported to police, 2007–2011",,,,,,,,
+,,,,,,,,
+,,,Total nonfatal violence,,Firearm violence,,Nonfirearm violence,
+,Total,,100,%,100,%,100,%
+Reported,,,46.9,%,61.5,%,45.7,%
+Not reported,,,51.7,%,37.6,%,52.9,%
+,Reason not reported,,100,%,100,%,100,%
+,,Dealt with it another way,35,,12.1,,36.4,
+,,Not important enough to respondent,18.4,,6.2,,19.1,
+,,Police could not or would not help,16.7,,27.1,,16.1,
+,,Fear of reprisal,6.5,,31.3,,5.1,
+,,Did not want to get offender in trouble advised not to report,5.1,,4.3, !,5.1,
+,,Other/unknown/not one most important reason,18.2,,19,,18.2,
+Note: Detail may not sum to total due to rounding. Reasons for not reporting represent the reason the victim stated was most important. See appendix table 21 for standard errors.,,,,,,,,
+"!Interpret with caution. Estimate based on 10 or fewer sample cases, or coefficient of variation is greater than 50%.",,,,,,,,
+"Source: Bureau of Justice Statistics, National Crime Victimization Survey, 2007–2011.",,,,,,,,
