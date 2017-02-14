@@ -129,17 +129,20 @@ import numpy as np
 
 file_name="MLBTeams2014.csv"
 
-data_matrix=np.loadtxt(file_name, delimiter=',', usecols=(1,), skiprows=1, unpack=True)
-print data_matrix.shape
+FORGET ABOUT IT, LET'S JUST GO STRAIGHT TO PANDAS!!!!!
+
 						</code></pre>
 			</section>
 				<section>	
 						<h3>Open .csv with pandas</h3>
 	 					<pre><code class="python" data-trim contenteditable>
 import pandas as pd
+###!!!!! NEW FOR 2017 -- Import display to print nice looking tables
+from IPython.display import display
+
 data_pandas=pd.read_csv(file_name)
 print type(data_pandas)
-print data_pandas.head()
+display data_pandas.head()
 
 						</code></pre>
 			</section>
@@ -277,7 +280,11 @@ print "standard deviation is: ", data_matrix.std()
 
 
 				<section>
-					<h4>Single sample t-test with KNIME</h4>
+					<h4>Single sample t-test simple IPython examples</h4>
+					
+				</section>
+				<section>
+					<h4>Single sample t-test human body temps with KNIME</h4>
 					
 					<img src="images/knimestats2.jpg">
 				</section>
