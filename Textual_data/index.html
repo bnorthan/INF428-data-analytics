@@ -70,21 +70,39 @@
 
 						<ul>
 							<li>Plain text is the most common form of data</li>
-							<li>NLTK -> Natural Language Toolkit</li>
+							<li>In Python -> NLTK -> Natural Language Toolkit</li>
 							<li>NLTK comes with sample texts called Corpora</li>
+							<li>KNIME has many text processing nodes</li>
+							<li>KNIME Labs->Text Processing</li>
 						</ul>
-					</section>
+			</section>
 
 			<section data-background="../images/background2.png">
 					<h3> Common Concepts</h3>	
+					<section>
 					<ul>
 						<li>Corpus -> collection of written texts</li>
-						<li>Stopwords -> low information words</li>
-						<li><a href="https://www.gutenberg.org/">Guttenburg collection</a></li>	
+						<li>Document -> collection of text with meta data</li>
+						<ul>
+							<li>Title</li>
+							<li>Author</li>
+							<li>Date</li>
+						</ul>
 					</ul>
 					</section>
+					<section>
+						<ul>
+							<li>KNIME->String to document</li>
+							<li>KNIME->Stop word filter</li>
+						</ul>
+					</section>
+					<section>
+						<img src="KNIME_TextProcessing.jpg">
+					</section>
+									</section>
 
 			<section data-background="../images/background2.png">
+						<h3>Python text processing NLTK</h3>
 						<ul>
 						<li>Install NLTK --> conda install nltk</li>
 						<li>Download nltk corpus</li>
@@ -96,17 +114,10 @@ nltk.download()
 					</section>
 
 		
-				<section data-background="../images/background2.png">
-					<h3> Bag of words model</h3>	
-					<ul>
-						<li>Create collection of words in document</li>
-						<li>Count the number of times each word appears</li>
-						<li>Use word counts for analsyis (ie detect spam in e-mail)</li>	
-					</ul>
-				</section>
-
-				<section data-background="../images/background2.png">
+								<section data-background="../images/background2.png">
 					<h3>Preprocessing</h3>	
+				
+					<section>
 					<ul>
 						<li>Filter out very short words and single letter (a, I)</li>
 						<li>Filter out stopwords</li>
@@ -117,8 +128,32 @@ nltk.download()
 						<li>Filter out names</li>
 						<li>Filter out numbers</li>	
 					</ul>
-				</section>
+					</section>
 
+					<section>
+						<h4>KNIME Preprocessing</h4>
+						<ul>
+							<li>Punctuation eraser</li>
+							<li>N Chars Filter</li>
+							<li>Number Filter</li>
+							<li>Stopwords -> low information words</li>
+						
+						</ul>
+					</section>
+
+				</section>
+				
+					<section data-background="../images/background2.png">
+					<h3> Bag of words model</h3>	
+					<ul>
+						<li>Create collection of words in document</li>
+						<li>Document Vector</li>
+						<ul>
+						<li>Count the number of times each word appears</li>
+						</ul>
+						<li>Use word counts for analsyis (ie detect spam in e-mail)</li>	
+					</ul>
+				</section>
 	
 			</div>
 
