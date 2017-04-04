@@ -138,6 +138,22 @@
 					</ul>
 					</ul>
 			</section>
+			
+			<section data-background="../images/background2.png">
+					<h2>Actually a version of SQLite is installed with Python</h2>
+		
+					<p>Below code opens database, or creates it, if it does not exist...
+					 <pre><code class="python" data-trim contenteditable>
+
+import pandas as pd
+from IPython.display import display
+import sqlite3
+
+conn=sqlite3.connect("../../data/databases/testdatabase.db")
+
+
+					 </code></pre>
+			</section>
 
 
 
@@ -145,8 +161,8 @@
 						<h3>IPython notebook basic sqlite examples</h3>
 						<ul>
 
-						<li>'...\2016 Q1 Spring\notebooks\Databases\sql.ipynb'</li>
-						<li>'...\2016 Q1 Spring\notebooks\Databases\bball_sql.ipynb'</li>
+						<li>'...\2017 Q1 Spring\notebooks\Databases\sql.ipynb'</li>
+						<li>'...\2017 Q1 Spring\notebooks\Databases\bball_sql.ipynb'</li>
 						<li><a href="http://www.w3schools.com/sql/">based on W3 Schools SQL Tutorial</a></li>
 						</ul>
 				<pre><code class="python" data-trim contenteditable>
@@ -164,7 +180,7 @@ with sqlite3.connect("mytest.db") as con:
 
 						<ul>
 
-						<li>See 'Databases' workflow in KNIME google drive</li>
+						<li>See 'Hockey_databases' workflow in KNIME google drive</li>
 						<li>Need
 							<ul>
 								<li>Connector (MySQL, SQLite)</li>
@@ -225,26 +241,22 @@ df.head()
 
 
 <section data-background="../images/background2.png">
-	<h3>Assignment 7 Changing face of NBA</h3>
+	<h3>Assignment 7 35 years of NHL team stats</h3>
 	<ul>
-		<li>For every player, for every year since 1990 put the players total stats in a database</li>
-		<li><a href="http://www.basketball-reference.com/leagues/NBA_1990_totals.html">Example data from 1990</a></li>
+		<li>For every team, for every year since 1980 put the teams total stats in a database</li>
+		<li><a href="http://www.hockey-reference.com/leagues/NHL_1980.html">Example data from 1980</a></li>
 		<li>There is a KNIME work flow (databases) set up to put 1 years worth of data into the data base</li>
-		<li>You may have to load the data into a spread sheet first and resave it, in order for it to load into KNIME</li>
-		<li>NOTE - you have to change the 'Java Snippet - Add year' node to append the proper year to the data</li>
+		<li>You may have to load the data into a spread sheet first and clean it</li>
+		<li>NOTE - you have to add a header to the team collumn called 'Team'</li>
 	
 	</ul>
 </section>	
 <section data-background="../images/background2.png">
-	<h3>Assignment 7 Changing face of NBA</h3>
+	<h3>Assignment 7 35 years of NHL team stats</h3>
 	<ul>
-		<li>NOTE - you have to change the name of some columns (Column Rename)</li>
-		<li>Once you have the data in a database</li>
-		<ul>
-			<li>Plot the leader in M3P (Made 3 pointers) and T3P (Total 3 pointers) for each year</li>
-			<li>Plot the sum of made 3 pointers and total 3 pointers for each year</li>
-		</ul>
-	
+		<li>Generate a plot showing how goals per game per year changed from 1980 to 2016</li>
+		<li>Generate a plot showing the average stats for each team since 1980 (groupby team name).</li>
+		
 	</ul>
 </section>	
 			</div>
