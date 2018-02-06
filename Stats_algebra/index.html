@@ -59,10 +59,7 @@
 
 				<section data-background="../images/background2.png">
 					<h2>INF 428: Statistics and Linear Algebra</h2>
-					<p>
-							<a href="http://fivethirtyeight.com/features/not-even-scientists-can-easily-explain-p-values/">538 SCIENTISTS EXPLAIN P-VALUES</a>
-					</p>
-		
+	
 				</section>
 				
 				
@@ -259,6 +256,10 @@ print "standard deviation is: ", data_matrix.std()
 				</section>
 				<section>
 					<h3>P-value</h3>
+					<p>
+							<a href="http://fivethirtyeight.com/features/not-even-scientists-can-easily-explain-p-values/">538 SCIENTISTS EXPLAIN P-VALUES</a>
+					</p>
+	
 				 <p align="left">The p-value is the probability of obtaining the observed sample results (or a more extreme result) when the null hypothesis is actually true.</p>
 				</section>
 					
@@ -266,6 +267,8 @@ print "standard deviation is: ", data_matrix.std()
 					<h4>Single sample t-test</h4>
 					<ul>
 					<li> $t = \frac{\overline{x} - \mu_0}{s/\sqrt{n}}$</li>
+					<li> p is calculated from a table</li>
+					<li><a href="http://www.sjsu.edu/faculty/gerstman/StatPrimer/t-table.pdf">T-test table to determine p</a>
 					<li><a href="https://en.wikipedia.org/wiki/Student%27s_t-test#One-sample_t-test">Wikipedia Explanation</a>
 
 					</ul>
@@ -343,7 +346,7 @@ scipy.stats.ttest_1samp(temps, 98.6)
 				<ul>
 					<li>data -> data/baseball/MLB2015Pitching.csv</li>
 					<li>KNIME workflow -> WinningVsLosingTeams</li>
-					<li>IPython notebook -> Baseball Teams</li> 
+					<li>IPython notebook -> T-test Baseball Teams</li> 
 					<li>Remember! Make copy of class google drive (MyINF428 or something)</li>
 				</ul>
 			</section>
