@@ -396,9 +396,8 @@
 		
 		</section>
 
-		</section>
 				
-			<section data-background="../images/background2.png">
+		<section data-background="../images/background2.png">
 			<h3>Naive Bayes</h3>
 
 			<ul>
@@ -407,131 +406,69 @@
 			
 			<li><a href="https://en.wikipedia.org/wiki/Bayes%27_theorem#Statement_of_theorem">"Wikipedia Baye's Theorem'</a></li>
 			<li><a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier">"Wikipedia Baye's Classifier'</a></li>
-
 			</ul>
-		
 		</section>
-	
-		<section data-background="../images/background2.png">
-			<h3>Baye's theorem considers likelihood of each class + features</h3>
-
-			<ul>
-			<li>If it looks like a drug user</li>
-		
-			<li>But drug users are unlikely</li>
-			<li>It's still probably not a drug user</li>
-			</ul>
-		
-		</section>
-
-
-	
-		<section data-background="../images/background2.png">
-				<h3>KNIME example - Indian-diabetes set</h3>
-		</section>
-
 
 		<section data-background="../images/background2.png">
 
+				<h3>Self Prediction vs Test Prediction vs Validation</h3>
 
-			<ul>
-				<li>File Reader</li>
-
-				<li>Visualize
-					<ul>
-						<li>Color Manager</li>
-						<li>Scatter Plot</li>
-						<li>Scatter Matrix</li>
-					</ul>
-				</li>
-				<li>Preprocess
-				<ul>
-					<li>Normalizer</li>
-					<li>Partioner</li>
-				</ul></li>
-				<li>Train</li>
-				<li>Evaluate</li>
-			</ul>
-
-		</section>
-
-	
-		<section data-background="../images/background2.png">
-				<h3>IPython notebook example - Indian-diabetes set</h3>
-		</section>
-
-
-		<section data-background="../images/background2.png">
-
-			<h3>Regression</h3>
-			<ul>
-				<li>Used to find correlation between parameters</li>
-				<li>Used to predict</li>
-			</ul>
-		</section>
-
-<section data-background="../images/background2.png">
-
-			<h3>Classification vs. Regression</h3>
-			<ul>
-				<li>Classification - assign a label
-				<ul><li>Is a person tall?</li></ul></li>
-				<li>Regression - assign a numeric value
-				<ul><li>How tall?</li></ul></li>
-			</ul>
-		</section>
-	<section data-background="../images/background2.png">
-
-			<h3>Regression</h3>
-			<ul>
-				<li>Determine if variables are correlated</li>
-				<li>If variables are correlated use relationship to predict something new</li>
-			</ul>
-		</section>
-
-	<section data-background="../images/background2.png">
-		<h3>Correlated x and y</h3>
-		<img src="regression.png">
-	</section>
-<section data-background="../images/background2.png">
-
-			<h3>Multivariate Regression</h3>
-			<ul>
-				<li>Multiple Variables</li>
-				<li>Similar to previous examples on classification</li>
-					<li>Classification
-				<ul><li>Multiple features -> Classify</li></ul></li>
-<li>Regression
-				<ul><li>Multiple variables -> Predict</li></ul></li>
-
-			</ul>
-		</section>
-
-<section data-background="../images/background2.png">
-
-			<h3>Self Prediction vs. Test Prediction vs. Cross Validaiton</h3>
 			<ul>
 				<li>Self Prediction - make predictions on training data BAD</li>
 				<li>Self Prediction - NO DON"T DO IT.  STOP PLEASE NOW!!!!</li>
 				
 				<li>Test Prediction
-				<ul>
+				<li>Run prediction on test set -- it may be BAD</li>
+				
+			</ul>
+		</section>
+
+
+
+	<section data-background="../images/background2.png">
+
+				<h3>Self Prediction vs Test Prediction vs Validation</h3>
+
+			<ul>
 				<li>Run prediction on test set -- it may be BAD</li>
 				<li>No problem you may have "Overfit" the training data</li>
+				<li>Try different models and parameters until you get good test prediciton</li>
+				<li>Then do "Validation"<li>
+						<ul>
+							<li>Test again on data you've never seen</li>
+							<li>Needed because you may tuned your model to your test</li>
+						</ul>
 
+
+			</ul>
+		</section>
+
+
+
+<section data-background="../images/background2.png">
+
+			<h3>Cross Validation</h3>
+			<ul>
+				<li>Divides data into partitions</li>
+				<li>Tests on that partition, trains on rest of data</li>
+				<li>Advantage over partitioning</li>
+				<ul>
+					<li>Each data point is predicted</li>
+				</ul>
 			</ul>
 		</section>
 
 <section data-background="../images/background2.png">
 
-			<h3>Regression overfitting example (Hockey Data)</h3>
+			<h3>Regression overfitting example (Baseball Data)</h3>
 			<ul>
 				<li>Overfitting means it found random patterns in the training</li>
-				<li>To many variables can lead to overfitting</li>
+				<li>Too many variables can lead to overfitting</li>
 				<li>The random patterns don't exist in the test data</li>
 				<li>To improve test data results remove variables</li>
 				<li>Start with highest p-values</li>
-
+				<li>Backward Selection</li>
+				
 			</ul>
 		</section>
 
