@@ -63,8 +63,9 @@
 					<section>
 						<ul>
 							<li>Interactive Command Shell <a href="https://en.wikipedia.org/wiki/IPython">(Ipython)</a></li>
-							<li>Integrated Development Environment <a href="https://www.jetbrains.com/pycharm-edu/download/#section=linux-version">(PyCharm Edu)</a></li>
+							<li>Integrated Development Environment <a href="https://www.spyder-ide.org/">Spyder</a></li>
 							<li><a href="http://ipython.org/notebook.html">Ipython Notebook</a></li>
+							<li><a href="https://colab.research.google.com">Google Colab</li>
 						</ul>
 					</section>
 				</section>
@@ -80,7 +81,27 @@
 						</ul>
 					</section>
 				</section>
-			
+
+
+				<section data-background="../images/background2.png">
+					<h2>Today's Colab Workbook</h2>
+					<ul>
+						<li><a href="https://colab.research.google.com/drive/1VVky7JVWOQiWuwct2wuBrxqMNMh0CYMj">Notebook</a></li>
+					</ul>
+				
+				</section>
+
+				<section data-background="../images/background2.png">
+					<h2>Most important Python concepts</h2>
+					<ul>
+						<li>Python is dynamically types</li>
+						<li>As opposed to statically typed</li>
+						<li>Sometimes need to use 'type' keyword</li>
+					</ul>
+				</section>
+
+
+
 				<section data-background="../images/background2.png">
 					<h2>Python Basics</h2>
 					<section>
@@ -446,8 +467,275 @@ print mul_array
 
 						</code></pre>
 			</section>				
-	
+
+
+
+
+
+
+
 		</section>	
+	
+		<section data-background="../images/background2.png">
+					<h2>Working with arrays</h2>
+
+					<section>
+						<p>Initialize an array</p>
+  					<pre><code class="python" data-trim contenteditable>
+					
+import numpy as np
+
+array_1d=np.array([233, 12, 100])
+print array_1d
+
+# the shape function show the size of the array
+print array_1d.shape
+					
+						</code></pre>
+		
+						<p>Access elements</p>
+						<pre><code class="python" data-trim contenteditable>
+
+test1=array_1d[0]					
+test2=array_1d[1]					
+test3=array_1d[2]					
+				
+print "the numbers are",test1,test2,test3	
+						</code></pre>
+					</section>
+					<section>
+						<p>A 2D Array</p>
+   					<pre><code class="python" data-trim contenteditable>
+					
+array_2d=np.array([[20, 40],[10,20]])
+print array_2d
+print array_2d.shape
+					
+						</code></pre>
+						<p>Access elements</p>
+						<pre><code class="python" data-trim contenteditable>
+					
+test1=array_2d[0,0]
+test2=array_2d[0,1]
+test3=array_2d[1,0]
+test4=array_2d[1,1]
+				
+print "the numbers are",test1,test2,test3,test4	
+						</code></pre>
+					</section>
+
+						<section>
+						<p>Numpy Arrays can have different types</p>
+						
+   					<pre><code class="python" data-trim contenteditable>
+int_array=np.array([0,1,2,3], dtype=np.uint16)
+float32_array=np.array([0,1,2,3], dtype=np.float32)
+
+print int_array
+print float32_array	
+
+
+						</code></pre>
+
+						</section>
+							<section>
+						<p>Slicing Arrays</p>
+						
+   					<pre><code class="python" data-trim contenteditable>
+a=np.arange(15)
+print a
+
+b=a[4:11]
+print "sliced 4:11",b
+
+c=a[2:12:3]
+print "sliced 2:12:3:",c
+
+d=a[-1]
+print "indexed -1:",d
+
+e=a[8:2:-2]
+print "sliced 8:2:-2"
+
+						</code></pre>
+					</section>			
+						<section>
+						<p>Reshaping Arrays</p>
+						
+   					<pre><code class="python" data-trim contenteditable>
+a=np.arange(15)
+
+print "before reshaping: "
+print a
+print a.shape
+
+a.shape=(5,3)
+
+print "after reshaping: "
+print a
+print a.shape
+
+
+						</code></pre>
+					</section>			
+					</section>
+
+
+
+					<section data-background="../images/background2.png">
+					<h2>Array Atributes</h2>
+
+					<section>
+						<p>Create an array to work with...</p>
+  					<pre><code class="python" data-trim contenteditable>
+			
+test_array=np.arange(20).reshape(4,5)
+print test_array
+
+print test_array.ndim
+print test_array.shape
+print test_array.size
+print test_array.nbytes
+print test_array.itemsize
+
+print test_array.T
+
+						</code></pre>
+					</section>
+				</section>
+
+					<section data-background="../images/background2.png">
+					<h2>Conditional Indexing</h2>
+
+					<section>
+						<p>We can index an array by a condition</p>
+  					<pre><code class="python" data-trim contenteditable>
+
+test_array=np.arange(10)
+print test_array
+
+test_array[ (test_array>3) & (test_array<7)]=15
+print test_array
+
+					</pre></code>
+					</section>
+				</section>
+
+
+
+			<section data-background="../images/background2.png">
+					<h2>Images</h2>
+
+					<section>
+						<p>Load a test Image from scipy</p>
+  					<pre><code class="python" data-trim contenteditable>
+			
+import scipy.misc
+import matplotlib.pyplot as plt
+
+lena = scipy.misc.lena()
+print lena.shape
+
+print type(lena)
+print lena.shape
+print lena.dtype
+
+plt.imshow(lena)
+plt.show()
+						</code></pre>
+					</section>
+				</section>
+
+				<section data-background="../images/background2.png">
+					<h2>Audio</h2>
+
+					<section>
+						<p>Download a sound file from web and save</p>
+  					<pre><code class="python" data-trim contenteditable>
+		
+import scipy.io.wavfile
+import matplotlib.pyplot as plt
+import urllib2
+import numpy as np
+
+response = urllib2.urlopen('http://www.thesoundarchive.com/play-wav-files.asp?sound=starwars/swvader01.wav')
+print response.info()
+WAV_FILE = 'vader.wav'
+filehandle = open(WAV_FILE, 'w')
+filehandle.write(response.read())
+filehandle.close()
+
+					</code></pre>
+				</section>
+
+
+	
+				<section>
+						<p>Open sound file in python</p>
+  					<pre><code class="python" data-trim contenteditable>
+		
+sample_rate, data = scipy.io.wavfile.read(WAV_FILE)
+print "Data type", data.dtype, "Shape", data.shape
+
+						</code></pre>
+					</section>
+
+				<section>
+						<p>Plot the sound file</p>
+  					<pre><code class="python" data-trim contenteditable>
+	
+plt.title("Sound File")
+plt.plot(data)
+plt.show()
+						</code></pre>
+					</section>
+				</section>
+
+
+				<section data-background="../images/background2.png">
+
+					<p>Hello matplotlib</p>
+
+ 					<pre><code class="python" data-trim contenteditable>
+	
+# hello matplotlib
+%matplotlib inline
+import matplotlib.pyplot as plt
+plt.plot([1,2,3],[4,5,6])
+					</code></pre>
+	
+				</section>
+
+				<section data-background="../images/background2.png">
+
+					<p>Hello Pandas</p>
+					<pre><code class="python" data-trim contenteditable>
+	# hello Pandas
+import pandas as pd
+df=pd.read_csv('C:\\Users\\bnorthan\\Google Drive\\UAlbany InfoSci Instructors\\INF 428 Analysis, Visualize & Prediction in Analytics\\2019 Q1 Spring\\data\\baseball\\mlb_standings.csv')
+df.head()
+ 
+					</code></pre>
+	
+				</section>
+
+
+				<section data-background="../images/background2.png">
+
+
+					<p>Hello Pandas (relative path)</p>
+					<pre><code class="python" data-trim contenteditable>
+# hello Pandas
+import pandas as pd
+df=pd.read_csv('../data/baseball/mlb_standings.csv')
+df.head()
+ 
+					</code></pre>
+	
+				</section>
+
+
+
 
 				
 		</div>
