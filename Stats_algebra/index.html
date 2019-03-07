@@ -443,7 +443,187 @@ stats.ttest_ind(losers.HR, winners.HR)
 
 			</section>
 
+				
+			<section data-background="../images/background2.png">
+			<h2>Random numbers</h2>
+						
+						<h3>Distributions</h3>
+					<ul>
+						<li>Normal distribution</li>
+						<li>Binomial distribution</li>
+					</ul>
+				</section>
+		
+			<section data-background="../images/background2.png">
+			<h2>Normal Distribution</h2>
+	
+					<ul>
+						<li>a.k.a. Gauss, a.k.a. Bell curve</li>
+						<li>many biological measurements</li>
+						<li>defined by mean and standard deviation</li>
+					</ul>
 
+					<p>
+$$
+P(x)=\frac{1}{\sigma \sqrt{2\pi}}e^{-(x-\mu)/2\sigma^2}
+$$
+					</p>
+				</section>
+	
+			<section data-background="../images/background2.png">
+						<h3>Generating and plot Normal Value</h3>
+			<p>Example in notebooks/statistics/normaldistribution.ipynb/p>
+				<pre><code class="python" data-trim contenteditable>
+%matplotlib inline
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+def plotNormal(mean, std, num_samples):
+    normal=np.random.normal(mean, std, num_samples)
+    plt.plot(np.arange(num_samples), normal)
+    plt.title(str(num_samples,)+" random samples")
+    plt.show()
+    
+    plt.hist(normal, np.sqrt(num_samples))
+    plt.title("Histogram of "+str(num_samples)+" samples.")
+				</code></pre>
+		
+			</section>
+
+			<section data-background="../images/background2.png">
+			<p>Try a few different values...</p>
+				<pre><code class="python" data-trim contenteditable>
+
+plotNormal(10, 100, 20000)
+plotNormal(100, 50, 20000)
+plotNormal(1000, 5, 20000)
+
+				</code></pre>
+		
+
+			</section>
+		
+			<section data-background="../images/background2.png">
+			      <h3>Confidence Interval</h3>
+			      <ul>
+				<li>Range of values defined so that there is a specified probability a value lies within it. </li>
+			      	<li>ie 95% confidence interval is a range of values that we are 95% certain contains the value. </li>
+				<li>Confidence interval can be calculated from mean and standard deviation of a distribution. </li>
+			      </ul>
+				<pre><code class="python" data-trim contenteditable>
+# in Python
+import scipy
+scipy.stats.norm.interval(0.95, test1.mean(), test1.std())
+				</code></pre>
+
+			</section>
+				
+			<section data-background="../images/background2.png">
+			      <h3>Confidence Interval of the mean</h3>
+			      <ul>
+				<li>A mean calculated from sample data has an error itself</li>
+				<li>Often we are interested in quantifying this error with a confidence interval</li>
+				<li>In this case we need a statistic that estimated the standard deviation of the mean</li>
+				<li>This is called standard error.</li>
+			      </ul>
+
+
+
+
+			</section>
+					
+			<section data-background="../images/background2.png">
+			      <h3>Standard Deviation vs Standard Error</h3>
+			      
+					<ul>
+						<li>standard deviation</li>
+						<li>Measures how far datapoints are from average</li>
+					<p>
+$$
+\sigma=\sqrt{\frac{1}{N}\sum_{i=1}^{N}(x_i-\mu)}
+$$
+					</p>
+						<li>standard error of mean</li>
+						<li>Measures deviation of the mean</li>
+$$
+{\sigma}_\bar{x}=\frac{\sigma}{\sqrt{n}}
+$$
+				</ul>
+	
+			
+			
+			
+			</section>
+
+			<section data-background="../images/background2.png">
+			      <h3>Confidence Interval of mean</h3>
+			      <ul>
+				<li>Range of values defined so that there is a specified probability the mean of the distribution lies within it. </li>
+			      	<li>ie 95% confidence interval is a range of values that we are 95% certain contains the mean. </li>
+				<li>Confidence interval can be calculated from mean and standard error of a distribution. </li>
+			      </ul>
+				<pre><code class="python" data-trim contenteditable>
+# in Python
+import scipy
+# assume a is an array
+sample_mean=np.mean(a);
+standard_error=scipy.stats.sem(a)
+
+scipy.stats.t.interval(0.95, len(a)-1, loc=sample_mean, scale=standard_error)
+				</code></pre>
+
+			</section>
+	
+			<section data-background="../images/background2.png">
+			<h3>Binomial distribution</h3>
+			<p>Models number of sucesses in n runs of an experiment</p>
+				<pre><code class="python" data-trim contenteditable>
+import numpy as np
+import matplotlib.pyplot as py
+
+num_trials=100
+chance_of_success=.5
+
+num_sucesses=np.random.binomial(num_trials, chance_of_success)
+
+				</code></pre>
+		</section>
+
+			<section data-background="../images/background2.png">
+						<h3>Modelling a baseball season</h3>
+					<ul>
+						
+						<li>Player bats 4 times a game</li>
+						<li>True average is .300</li>			
+						<li>Plays 158 games</li>
+						<li>Can use binomial distribuation to model average over course of season</li>
+
+					</ul>
+
+		</section>
+
+			<section data-background="../images/background2.png">
+			<p>Modelling a baseball season</p>
+				<pre><code class="python" data-trim contenteditable>
+
+%matplotlib inline
+
+outcome=np.random.binomial(4, 0.3, games)
+avg=np.zeros(games)
+ab, hits=0.0, 0.0
+
+for i in range(0,games):
+    ab=ab+4
+    hits=hits+outcome[i]
+    avg[i]=hits/ab
+
+py.plot(np.arange(games),avg)
+
+				</code></pre>
+		
+			</section>
+	
 			<section data-background="../images/background2.png">
 			<h2>Linear Algebra</h2>
 				
@@ -588,120 +768,7 @@ print eigvals[0]*eigvecs[:,0]
 			</section>
 		</section>
 -->
-				
-			<section data-background="../images/background2.png">
-			<h2>Random numbers</h2>
-						
-			<section>	
-						<h3>Distributions</h3>
-					<ul>
-						<li>Binomial distribution</li>
-						<li>Normal distribution</li>
-					</ul>
-				</section>
-	
-				<section>
-			<h3>Binomial distribution</h3>
-			<p>Models number of sucesses in n runs of an experiment</p>
-				<pre><code class="python" data-trim contenteditable>
-import numpy as np
-import matplotlib.pyplot as py
 
-num_trials=100
-chance_of_success=.5
-
-num_sucesses=np.random.binomial(num_trials, chance_of_success)
-
-				</code></pre>
-		</section>
-
-		<section>	
-						<h3>Modelling a baseball season</h3>
-					<ul>
-						
-						<li>Player bats 4 times a game</li>
-						<li>True average is .300</li>			
-						<li>Plays 158 games</li>
-						<li>Can use binomial distribuation to model average over course of season</li>
-
-					</ul>
-
-		</section>
-
-		<section>
-			<p>Modelling a baseball season</p>
-				<pre><code class="python" data-trim contenteditable>
-
-%matplotlib inline
-
-outcome=np.random.binomial(4, 0.3, games)
-avg=np.zeros(games)
-ab, hits=0.0, 0.0
-
-for i in range(0,games):
-    ab=ab+4
-    hits=hits+outcome[i]
-    avg[i]=hits/ab
-
-py.plot(np.arange(games),avg)
-
-				</code></pre>
-		
-			</section>
-		</section>
-			
-			<section data-background="../images/background2.png">
-			<h2>Normal Distribution</h2>
-	
-			<section>	
-					<ul>
-						<li>a.k.a. Gauss, a.k.a. Bell curve</li>
-						<li>many biological measurements</li>
-						<li>defined by mean and standard deviation</li>
-					</ul>
-
-					<p>
-$$
-P(x)=\frac{1}{\sigma \sqrt{2\pi}}e^{-(x-\mu)/2\sigma^2}
-$$
-					</p>
-				</section>
-	
-					<section>
-						<h3>Generating and plot Normal Value</h3>
-			<p>Example in notebooks/statistics/normaldistribution.ipynb/p>
-				<pre><code class="python" data-trim contenteditable>
-%matplotlib inline
-
-import numpy as np
-import matplotlib.pyplot as plt
-
-def plotNormal(mean, std, num_samples):
-    normal=np.random.normal(mean, std, num_samples)
-    plt.plot(np.arange(num_samples), normal)
-    plt.title(str(num_samples,)+" random samples")
-    plt.show()
-    
-    plt.hist(normal, np.sqrt(num_samples))
-    plt.title("Histogram of "+str(num_samples)+" samples.")
-				</code></pre>
-		
-			</section>
-
-			<section>
-			<p>Try a few different values...</p>
-				<pre><code class="python" data-trim contenteditable>
-
-plotNormal(10, 100, 20000)
-plotNormal(100, 50, 20000)
-plotNormal(1000, 5, 20000)
-
-				</code></pre>
-		
-
-			</section>
-		</section>
-	
 
 		</div>
 
